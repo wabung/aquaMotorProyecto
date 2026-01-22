@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" fillWidth="false" maxHeight="900.0" maxWidth="1400.0" minHeight="900.0" minWidth="1400.0" prefHeight="900.0" prefWidth="1400.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aquaMotor.aquaMotorProyecto.PrimaryController">
+   <children>
+      <Label text="Primary View" />
+      <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
