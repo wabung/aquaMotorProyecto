@@ -1,0 +1,99 @@
+/* --- ESTILOS DEL APP BAR (TITULO PRINCIPAL) --- */
+#titleWidget {
+    -fx-background-color: #0F172A;
+}
+
+#titleAppBar {
+    -fx-text-fill: #F1F5F9;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 2px;
+}
+
+#imageTitle {
+    -fx-opacity: 0.9;
+}
+
+/* --- ESTILOS DE LA CARTA (Information Card) --- */
+#Card {
+    -fx-background-color: #1E293B;    /* Azul oscuro fondo de la carta */
+    -fx-background-radius: 15;        /* Bordes redondeados */
+    -fx-border-color: #F1F5F9;        /* Borde sutil grisáceo */
+    -fx-border-radius: 15;
+    -fx-border-width: 1;
+}
+
+/* Estilo para el texto "TITULO" (Reparations/Month, etc) */
+#title {
+    -fx-text-fill: #F1F5F9;           /* Color gris azulado claro */
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0 0 5;
+}
+
+/* Estilo para el texto "CANTIDAD" (Los números o resultados) */
+#result {
+    -fx-text-fill: #F1F5F9;           /* Blanco puro */
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 0 5;
+}
+
+/* --- ESTILO PARA EL BOTÓN GRANDE (bigButton.fxml) --- */
+#button {
+    -fx-background-color: #14532D;    /* Verde principal */
+    -fx-text-fill: #F1F5F9;           /* Texto blanco */
+    -fx-background-radius: 10; /* Bordes redondeados */
+    -fx-border-color: #F1F5F9;
+    -fx-border-radius: 15;
+
+    -fx-border-width: 1;
+    -fx-font-weight: bold;
+
+    -fx-font-size: 28px;
+    -fx-text-overrun: clip;
+    -fx-wrap-text: false;
+    -fx-min-width: -font-relative;
+
+    -fx-cursor: hand;
+    -fx-transition: 0.3s;
+}
+
+/* Efecto cuando el ratón está encima */
+#button:hover {
+    -fx-background-color: #2ea043;
+}
+
+/* Efecto cuando se mantiene presionado */
+#button:armed {
+    -fx-background-color: #1a632b;
+}
+
+/* --- ESTILOS DEL NUEVO APPBAR (GridPane) --- */
+
+/* Contenedor principal del AppBar con navegación */
+#appbar-navigation {
+    -fx-background-color: #1E293B; /* Azul muy oscuro */
+    -fx-padding: 0 20 0 20;
+}
+
+/* Estilo para el botón de retroceso (<----) */
+#back-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #F1F5F9;
+    -fx-border-color: #334155;
+    -fx-border-radius: 5;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+#back-button:hover {
+    -fx-background-color: #1E293B;
+    -fx-border-color: #F1F5F9;
+}
+
+/* Estilo para el título central del AppBar */
+#title-nav {
+    -fx-text-fill: #F1F5F9;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}

@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane id="titleWidget" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane id="titleWidget" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="960.0" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane prefHeight="150.0" prefWidth="960.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView id="imageTitle" fitHeight="129.0" fitWidth="156.0" layoutX="206.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="imageTitle" fitHeight="129.0" fitWidth="156.0" layoutX="215.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+
             <Label id="titleAppBar" layoutX="386.0" layoutY="44.0" prefHeight="62.0" prefWidth="538.0" text="TITLE">
                <font>
-                  <Font size="42.67" />
+                  <Font name="System Bold" size="42.0" />
                </font>
             </Label>
          </children>

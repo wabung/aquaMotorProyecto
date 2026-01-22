@@ -4,12 +4,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="76.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="76.0" prefWidth="500.0" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <Button id="button" mnemonicParsing="false" prefHeight="76.0" prefWidth="500.0" text="Button" BorderPane.alignment="CENTER">
+      <Button id="button" mnemonicParsing="false" prefHeight="65.0" prefWidth="480.0" text="BUTTON" BorderPane.alignment="CENTER">
          <font>
-            <Font size="32.0" />
+            <Font name="System Bold" size="28.0" />
          </font>
       </Button>
    </center>
