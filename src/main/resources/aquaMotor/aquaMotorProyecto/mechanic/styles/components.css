@@ -97,3 +97,46 @@
     -fx-font-weight: bold;
     -fx-letter-spacing: 1px;
 }
+
+/* --- ESTILOS DE LA TARJETA DE TAREA (Task Card) --- */
+#task-card {
+    -fx-background-color: #1E293B;    /* Fondo azul oscuro de la carta */
+    -fx-background-radius: 15;
+    -fx-border-color: #334155;        /* Borde sutil */
+    -fx-border-radius: 15;
+    -fx-border-width: 1;
+}
+
+/* Textos internos */
+#vehicle_id {
+    -fx-text-fill: #F1F5F9;
+    -fx-font-weight: bold;
+}
+
+#vehicle_name {
+    -fx-text-fill: #F1F5F9;
+    -fx-font-weight: normal;
+}
+
+#description {
+    -fx-text-fill: #94a3b8;           /* Gris tenue para la descripción */
+    -fx-font-weight: normal;
+}
+
+/* Botones inferiores (Start / Details) */
+.action-button {
+    -fx-background-color: #14532D;    /* Verde principal */
+    -fx-text-fill: #F1F5F9;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;              /* Tamaño fijo para que no cambie */
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-background-color: #166534;
+}
+
+.action-button:armed {
+    -fx-background-color: #052e16;
+}
