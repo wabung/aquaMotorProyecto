@@ -27,7 +27,7 @@
             </font>
         </Button>
 
-        <Label id="title-nav" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="MY WORKDAY" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <Label id="title-nav" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="TITLE" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
             <font>
                 <Font name="System Bold" size="36.0" />
             </font>

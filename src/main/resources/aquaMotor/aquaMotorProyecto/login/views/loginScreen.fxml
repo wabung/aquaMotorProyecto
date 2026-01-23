@@ -101,7 +101,7 @@
                         <Insets top="5.0" />
                      </StackPane.margin>
                      <image>
-                        <Image url="@../images/aquamotor.png" />
+                        <Image url="@../../login/images/aquamotor.png" />
                      </image>
                   </ImageView>
 

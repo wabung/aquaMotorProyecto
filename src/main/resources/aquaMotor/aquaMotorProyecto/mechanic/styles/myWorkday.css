@@ -1,0 +1,71 @@
+.root {
+    -fx-background-color: #111927; /* Azul oscuro de fondo */
+    -fx-font-family: "Arial";
+}
+
+/* Texto general blanco */
+.label {
+    -fx-text-fill: white;
+}
+
+/* ------------------------------------------------ */
+/* Estilos para el Panel Derecho (Estadísticas)     */
+/* ------------------------------------------------ */
+
+.stats-panel {
+    -fx-border-color: #a0aab5; /* Borde gris claro */
+    -fx-background-color: #1E293B;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 10;
+}
+
+.stats-label-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e2e8f0;
+}
+
+.stats-label-value {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Botón Rojo "END WORKDAY" */
+.end-workday-btn {
+    -fx-background-color: #b03e3e; /* Rojo apagado */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 50%; /* Lo hace circular */
+    -fx-border-radius: 50%;
+    -fx-cursor: hand;
+}
+
+.end-workday-btn:hover {
+    -fx-background-color: #c94f4f; /* Rojo más claro al pasar el mouse */
+}
+
+.hidden-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+
+.hidden-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Ocultar visualmente la barra vertical pero mantener funcionalidad */
+.hidden-scroll .scroll-bar:vertical {
+    -fx-pref-width: 0;
+    -fx-opacity: 0;
+}
+
+/* Asegurar que no haya barra horizontal */
+.hidden-scroll .scroll-bar:horizontal {
+    -fx-pref-height: 0;
+    -fx-opacity: 0;
+
+}
