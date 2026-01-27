@@ -15,99 +15,77 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.67" prefWidth="960.0" styleClass="main-background" stylesheets="@../styles/loginCss.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="rootPane" maxHeight="Infinity" maxWidth="Infinity" minHeight="400.0" minWidth="600.0" styleClass="main-background" stylesheets="@../styles/loginCss.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+      <VBox alignment="CENTER" spacing="30.0">
          <children>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="651.33" styleClass="title-label" text="Welcome to Aqua Motor" textAlignment="CENTER" VBox.vgrow="ALWAYS">
-               <VBox.margin>
-                  <Insets bottom="40.0" left="154.0" right="154.0" top="50.0" />
-               </VBox.margin>
+            <Label alignment="CENTER" maxWidth="800.0" styleClass="title-label" text="Welcome to Aqua Motor" textAlignment="CENTER">
                <font>
-                  <Font size="32.0" />
+                  <Font name="System Bold" size="32.0" />
                </font>
             </Label>
 
-            <StackPane prefHeight="586.0" prefWidth="960.0">
+            <StackPane alignment="TOP_CENTER" maxWidth="600.0" VBox.vgrow="SOMETIMES">
                <children>
-
-                  <VBox prefHeight="530.0" prefWidth="960.0" styleClass="login-card">
+                  <VBox alignment="CENTER" spacing="20.0" styleClass="login-card">
                      <StackPane.margin>
-                        <Insets bottom="113.33" left="155.33" right="155.33" top="60.0" />
-                     </StackPane.margin>
+                        <Insets top="60.0" /> </StackPane.margin>
+                     <padding>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="70.0" />
+                     </padding>
                      <children>
-                        <GridPane prefHeight="271.0" prefWidth="648.0">
+                        <GridPane hgap="10.0" vgap="15.0">
                            <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" percentWidth="40.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="150.0" percentWidth="60.0" />
                            </columnConstraints>
                            <rowConstraints>
-                              <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="124.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="121.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="40.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="218.0" styleClass="field-label" text="USER" textAlignment="CENTER" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets left="100.0" right="100.0" />
-                                 </GridPane.margin>
+                              <Label alignment="CENTER" maxWidth="Infinity" styleClass="field-label" text="USER">
                                  <font>
-                                    <Font size="22.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="188.0" styleClass="field-label" text="PASSWORD" textAlignment="CENTER" GridPane.rowIndex="3">
-                                 <GridPane.margin>
-                                    <Insets left="100.0" right="100.0" />
-                                 </GridPane.margin>
+                              <Label alignment="CENTER" maxWidth="Infinity" styleClass="field-label" text="PASSWORD" GridPane.rowIndex="1">
                                  <font>
-                                    <Font size="22.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets right="20.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                              <PasswordField styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                 <GridPane.margin>
-                                    <Insets right="20.0" />
-                                 </GridPane.margin>
-                              </PasswordField>
+                              <TextField styleClass="text-field" GridPane.columnIndex="1" />
+                              <PasswordField styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
-                           <VBox.margin>
-                              <Insets top="40.0" />
-                           </VBox.margin>
                         </GridPane>
-                        <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="650.0" styleClass="login-btn" text="LOG IN">
-                           <VBox.margin>
-                              <Insets bottom="28.0" left="170.67" right="170.67" top="30.0" />
-                           </VBox.margin>
+
+                        <Button maxHeight="50.0" maxWidth="Infinity" mnemonicParsing="false" styleClass="login-btn" text="LOG IN">
                            <font>
-                              <Font size="22.0" />
+                              <Font size="20.0" />
                            </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
                         </Button>
                      </children>
                   </VBox>
 
-                  <Circle radius="65.0" styleClass="avatar-circle" StackPane.alignment="TOP_CENTER">
-                     <StackPane.margin>
-                        <Insets top="0.0" /> </StackPane.margin>
-                  </Circle>
-
-                  <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
-                     <StackPane.margin>
-                        <Insets top="5.0" />
-                     </StackPane.margin>
-                     <image>
-                        <Image url="@../../login/images/aquamotor.png" />
-                     </image>
-                  </ImageView>
-
+                  <StackPane maxHeight="-Infinity" maxWidth="-Infinity">
+                     <children>
+                        <Circle radius="60.0" styleClass="avatar-circle" />
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../login/images/aquamotor.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
                </children>
             </StackPane>
          </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
       </VBox>
    </children>
 </StackPane>
