@@ -1,0 +1,91 @@
+/* Fondo oscuro global */
+.root {
+    -fx-background-color: #050b18;
+}
+
+/* Combo STATUS estilo pestaña */
+.status-combo {
+    -fx-background-color: #1E293B;
+    -fx-border-color: #818ea0;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+/* Texto visible del combo */
+.status-combo .list-cell {
+    -fx-background-color: #1E293B;
+    -fx-text-fill: #ffffff;
+}
+
+/* Botón de flecha del combo */
+.status-combo .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.status-combo .arrow {
+    -fx-background-color: #cbd5f5;
+}
+
+/* Lista desplegable */
+.combo-box-popup .list-view {
+    -fx-background-color: #050b18;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: #050b18;
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #1E293B;
+}
+
+/* Barra de búsqueda horizontal */
+.search-field {
+    -fx-background-color: #1E293B;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #818ea0;
+    -fx-border-color: #818ea0;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 0 8 0 30;   /* deja espacio para el icono de lupa si lo usas */
+}
+
+.search-field:focused {
+    -fx-border-color: #cbd5f5;
+}
+
+/* Botón STATUS verde en cada card */
+.status-button {
+    -fx-background-color: #1f7c3a;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: transparent;
+    -fx-padding: 2 14 2 14;
+}
+
+.status-button:hover {
+    -fx-background-color: #269447;
+}
+
+.status-button:pressed {
+    -fx-background-color: #17602c;
+}
+
+/* Contenedor de cada fila (HBox) con borde redondeado */
+.status-row {
+    -fx-border-color: #818ea0;
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-padding: 8 10 8 10;
+    -fx-background-color: #1E293B;
+}

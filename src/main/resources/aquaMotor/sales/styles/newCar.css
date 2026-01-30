@@ -1,0 +1,94 @@
+/* Fondo oscuro general */
+.root {
+    -fx-background-color: #050b18;
+}
+
+/* Grid del formulario (ligera separación) */
+.form-grid {
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}
+
+/* Etiquetas LICENCE PLATE, MODEL, etc. */
+.form-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* Campos de texto: fondo oscuro, borde fino gris claro */
+.form-field {
+    -fx-background-color: #050b18;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #818ea0;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 4 6 4 6;
+}
+
+.form-field:focused {
+    -fx-border-color: #cbd5f5;
+}
+
+/* Botones SAVE / CLEAR como pastillas finas */
+.form-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-border-color: #818ea0;
+    -fx-border-width: 1;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 2 10 2 10;
+}
+
+.form-button:hover {
+    -fx-background-color: rgba(129,142,160,0.2);
+}
+
+.form-button:pressed {
+    -fx-background-color: rgba(129,142,160,0.35);
+}
+
+/* ComboBox central estilo TYPE, mismo borde que los campos */
+.type-combo {
+    -fx-background-color: #050b18;
+    -fx-border-color: #818ea0;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+/* Texto visible del ComboBox */
+.type-combo .list-cell {
+    -fx-background-color: #050b18;
+    -fx-text-fill: #ffffff;
+}
+
+/* Botón de flecha */
+.type-combo .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.type-combo .arrow {
+    -fx-background-color: #cbd5f5;
+}
+
+/* Lista desplegable */
+.combo-box-popup .list-view {
+    -fx-background-color: #050b18;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: #050b18;
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #1E293B;
+}
