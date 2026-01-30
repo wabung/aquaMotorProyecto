@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="76.0" prefWidth="500.0"
+            style="-fx-background-color: transparent;"
+            stylesheets="@../styles/components.css"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <center>
+        <Button id="button"
+                mnemonicParsing="false"
+                prefHeight="66.0"
+                prefWidth="455.0"
+                text="NEW EMPLOYEE"
+                BorderPane.alignment="CENTER">
+            <font>
+                <Font name="System Bold" size="28.0" />
+            </font>
+        </Button>
+    </center>
+
+</BorderPane>

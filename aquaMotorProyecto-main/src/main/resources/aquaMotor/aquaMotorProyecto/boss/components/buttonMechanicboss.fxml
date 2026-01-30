@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="256.0" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <Button id="btn" mnemonicParsing="false" prefHeight="33.0" prefWidth="210.0" style="-fx-font-size: 14px;" styleClass="green-button" stylesheets="@../styles/components.css" text="SAVE" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

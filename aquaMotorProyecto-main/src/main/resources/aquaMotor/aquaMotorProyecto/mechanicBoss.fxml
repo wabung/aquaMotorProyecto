@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="683.0" prefWidth="960.0" style="-fx-background-color: #0B1323;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+
+    <children>
+      <fx:include source="boss/components/titleCard.fxml" />
+        <BorderPane prefHeight="684.0" prefWidth="960.0">
+
+            <top>
+                <VBox alignment="CENTER" spacing="20" BorderPane.alignment="CENTER">
+                    <padding>
+                        <Insets bottom="20.0" top="40.0" />
+                    </padding>
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" spacing="30">
+                            <children>
+                                <fx:include source="boss/components/informationCard.fxml" />
+                                <fx:include source="boss/components/informationCard.fxml" />
+                                <fx:include source="boss/components/informationCard.fxml" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </top>
+
+            <left>
+                <VBox alignment="TOP_LEFT" prefHeight="461.0" prefWidth="550.0" spacing="10" BorderPane.alignment="CENTER">
+                    <padding>
+                        <Insets left="50.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label text="REPAIR DEPARTMENT STATS" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+
+                        <BarChart fx:id="repairChart" alternativeColumnFillVisible="true" horizontalGridLinesVisible="false" legendVisible="false" maxHeight="350.0" maxWidth="450.0" verticalGridLinesVisible="false">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM" tickLabelFill="WHITE" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" tickLabelFill="WHITE" />
+                            </yAxis>
+                        </BarChart>
+                    </children>
+                </VBox>
+            </left>
+
+            <right>
+                <VBox alignment="CENTER" prefHeight="476.0" prefWidth="350.0" spacing="25" BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets right="40.0" />
+                    </BorderPane.margin>
+                    <children>
+                        <fx:include source="boss/components/buttonMechanicboss.fxml" />
+                        <fx:include source="boss/components/buttonMechanicboss.fxml" />
+                        <fx:include source="boss/components/buttonMechanicboss.fxml" />
+                    </children>
+                </VBox>
+            </right>
+
+        </BorderPane>
+    </children>
+</VBox>

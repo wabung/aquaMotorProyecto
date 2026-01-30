@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="140.0" prefHeight="100.0"  prefWidth="284.0" styleClass="vehicle-card" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+
+    <stylesheets>
+        <URL value="@vehiclecard.css" />
+      <URL value="@../styles/components.css" />
+    </stylesheets>
+
+    <children>
+        <GridPane layoutX="111.0" layoutY="17.0" prefHeight="106.0" prefWidth="158.0" styleClass="vehicle-grid" AnchorPane.rightAnchor="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <!-- Labels título -->
+                <Label fx:id="typeLbl" styleClass="vehicle-label-title" text="Type:" />
+                <Label fx:id="modelLbl" styleClass="vehicle-label-title" text="Model:" GridPane.rowIndex="1" />
+                <Label fx:id="colorLbl" styleClass="vehicle-label-title" text="Color:" GridPane.rowIndex="2" />
+                <Label fx:id="yearLbl" styleClass="vehicle-label-title" text="Year:" GridPane.rowIndex="3" />
+                <Label fx:id="registrationLbl" styleClass="vehicle-label-title" text="Registration:" GridPane.rowIndex="4" />
+                <Label fx:id="needrepairLbl" styleClass="vehicle-label-title" text="Need repair:" GridPane.rowIndex="5" />
+                <Label fx:id="priceLbl" styleClass="vehicle-label-title" text="Price:" GridPane.rowIndex="6" />
+
+                <!-- Labels valor -->
+                <Label fx:id="typeTxt" styleClass="vehicle-label-value" text="Type" GridPane.columnIndex="1" />
+                <Label fx:id="modelTxt" styleClass="vehicle-label-value" text="Model" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label fx:id="colorTxt" styleClass="vehicle-label-value" text="Color" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label fx:id="yearTxt" styleClass="vehicle-label-value" text="Year" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label fx:id="registrationTxt" styleClass="vehicle-label-value" text="Registration" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label fx:id="needrepairTxt" styleClass="vehicle-label-value" text="Need repair" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label fx:id="priceTxt" styleClass="vehicle-label-value" text="Price" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            </children>
+        </GridPane>
+
+        <ImageView fx:id="vehicleImg" fitHeight="65.0" fitWidth="66.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" />
+    </children>
+</AnchorPane>
