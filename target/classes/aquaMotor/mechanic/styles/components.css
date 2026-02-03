@@ -1,0 +1,165 @@
+/* ==================================================================
+   ESTILOS GLOBALES Y DE LA TARJETA (CARD VIEW)
+   ================================================================== */
+
+/* Fondo general de la aplicación (para que coincida con la tarjeta) */
+.root {
+    -fx-background-color: #0F172A;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* --- ESTILOS DE LA CARTA (Information Card) --- */
+/* Replica exacta del ID Badge de la foto */
+#Card {
+    -fx-background-color: #1E293B;    /* Azul oscuro específico */
+    -fx-background-radius: 30;        /* Bordes muy redondeados */
+    -fx-border-color: #F1F5F9;        /* Borde blanco sutil */
+    -fx-border-radius: 30;            /* Debe coincidir con el background-radius */
+    -fx-border-width: 1;              /* Grosor fino y elegante */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 5); /* Sombra suave para profundidad */
+}
+
+/* Etiquetas de Título (Izquierda: NAME:, EMAIL:...) */
+.label-title {
+    -fx-text-fill: #F1F5F9;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-opacity: 0.9;                 /* Ligeramente más suave que el resultado */
+}
+
+/* Etiquetas de Resultado (Derecha: DATOS) */
+.label-result {
+    -fx-text-fill: #F1F5F9;           /* Blanco puro */
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;          /* En la foto se ven con peso similar al título */
+}
+
+/* ==================================================================
+   ESTILOS HEREDADOS (BARRA SUPERIOR, BOTONES, NAVEGACIÓN)
+   ================================================================== */
+
+/* --- ESTILOS DEL APP BAR (TITULO PRINCIPAL) --- */
+#titleWidget {
+    -fx-background-color: #0F172A;
+}
+
+#titleAppBar {
+    -fx-text-fill: #F1F5F9;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 2px;
+}
+
+#imageTitle {
+    -fx-opacity: 0.9;
+}
+
+/* --- ESTILO PARA EL BOTÓN GRANDE (BigButton.fxml) --- */
+#button {
+    -fx-background-color: #14532D;    /* Verde principal */
+    -fx-text-fill: #F1F5F9;           /* Texto blanco */
+    -fx-background-radius: 10;
+    -fx-border-color: #F1F5F9;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-font-weight: bold;
+    -fx-font-size: 28px;
+    -fx-text-overrun: clip;
+    -fx-wrap-text: false;
+    -fx-min-width: -font-relative;
+    -fx-cursor: hand;
+    -fx-transition: 0.3s;
+}
+
+#button:hover {
+    -fx-background-color: #2ea043;
+}
+
+#button:armed {
+    -fx-background-color: #1a632b;
+}
+
+/* --- ESTILOS DEL APPBAR DE NAVEGACIÓN --- */
+#appbar-navigation {
+    -fx-background-color: #1E293B;
+    -fx-padding: 0 20 0 20;
+}
+
+#back-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #F1F5F9;
+    -fx-border-color: #334155;
+    -fx-border-radius: 5;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+#back-button:hover {
+    -fx-background-color: #1E293B;
+    -fx-border-color: #F1F5F9;
+}
+
+#title-nav {
+    -fx-text-fill: #F1F5F9;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}
+
+/* --- ESTILOS DE LA TARJETA DE TAREA (Task Card) --- */
+#task-card {
+    -fx-background-color: #1E293B;
+    -fx-background-radius: 15;
+    -fx-border-color: #334155;
+    -fx-border-radius: 15;
+    -fx-border-width: 1;
+}
+
+#vehicle_id {
+    -fx-text-fill: #F1F5F9;
+    -fx-font-weight: bold;
+}
+
+#vehicle_name {
+    -fx-text-fill: #F1F5F9;
+    -fx-font-weight: normal;
+}
+
+#description {
+    -fx-text-fill: #94a3b8;
+    -fx-font-weight: normal;
+}
+
+/* Botones de acción pequeños */
+.action-button {
+    -fx-background-color: #14532D;
+    -fx-text-fill: #F1F5F9;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-background-color: #166534;
+}
+
+.action-button:armed {
+    -fx-background-color: #052e16;
+}
+
+/* --- CONTENEDOR REDONDO PARA LA IMAGEN --- */
+/* Aplica esta clase al StackPane que contiene el ImageView */
+.round-image-box {
+    -fx-background-color: #FFFF;/* Fondo negro detrás de la imagen */
+    -fx-border-color: #334155;
+
+    /* 50% convierte un cuadrado en un círculo perfecto */
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+
+    /* Opcional: Borde fino para definir el círculo */
+    -fx-border-color: #334155;        /* Color similar al borde de la tarjeta */
+    -fx-border-width: 1;
+
+    /* Opcional: Sombra suave para darle relieve */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 8, 0, 0, 2);
+}

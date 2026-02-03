@@ -1,0 +1,87 @@
+/* --- FONDO GENERAL --- */
+.root {
+    -fx-background-color: rgba(15, 23, 42, 1); /* Azul muy oscuro (casi negro) */
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* --- TÍTULO PRINCIPAL (LOG IN) --- */
+.title-label {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0, 0, 2);
+}
+
+/* --- LA TARJETA DEL FORMULARIO --- */
+/* Esta clase se la aplicas al VBox que tiene el borde */
+.login-card {
+    -fx-background-color: rgba(30, 41, 59, 1); /* Un tono un poco más claro que el fondo */
+    -fx-border-color: #F1F5F9;      /* Borde gris azulado sutil */
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    /* Sombra suave para darle profundidad */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 20, 0, 0, 10);
+}
+
+/* --- ETIQUETAS (USER / PASSWORD) --- */
+.field-label {
+    -fx-text-fill: #E0E0E0; /* Blanco no puro, para no cansar la vista */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* --- CAMPOS DE TEXTO (Inputs) --- */
+.text-field {
+    -fx-background-color: transparent; /* Fondo transparente */
+    -fx-border-color: #5D6D7E;         /* Borde gris */
+    -fx-border-width: 1px;
+    -fx-text-fill: white;              /* Texto blanco al escribir */
+    -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
+    -fx-padding: 10px;
+}
+
+/* Efecto cuando haces click en el campo (Foco) */
+.text-field:focused {
+    -fx-border-color: #D4AF37; /* ¡Toque DORADO al seleccionar! */
+    -fx-border-width: 1px;
+}
+
+/* --- BOTÓN (LOG IN) --- */
+.login-btn {
+    -fx-background-color: #1E5128; /* Verde oscuro bosque */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-border-color: #4CAF50;     /* Borde verde más claro */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s;
+}
+
+/* Efecto Hover (cuando pasas el mouse por encima) */
+.login-btn:hover {
+    -fx-background-color: #2E7D32; /* Se ilumina un poco */
+    -fx-effect: dropshadow(gaussian, rgba(76, 175, 80, 0.4), 10, 0, 0, 0);
+}
+
+/* Efecto Click (cuando presionas) */
+.login-btn:pressed {
+    -fx-background-color: #1b4724;
+}
+
+.avatar-circle {
+    /* El relleno debe ser del MISMO color que el fondo general
+       para que parezca transparente o "recortado" */
+    -fx-fill: rgba(30, 41, 59, 1);
+
+    /* Borde Dorado */
+    -fx-stroke: rgba(241, 245, 249, 1);
+
+    /* Grosor del borde */
+    -fx-stroke-width: 2px;
+
+    /* Opcional: una sombra sutil para que resalte sobre la tarjeta */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 2);
+}

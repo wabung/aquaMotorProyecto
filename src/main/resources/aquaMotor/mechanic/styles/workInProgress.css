@@ -1,0 +1,61 @@
+/* Fondo general de la aplicación */
+.root {
+    -fx-background-color: #0f172a; /* Azul oscuro casi negro */
+}
+
+/* Estilo general para todas las etiquetas */
+.label {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* Títulos de la izquierda (VEHICLE, TASK TYPE, etc.) */
+.grid-pane .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #94a3b8; /* Gris azulado para los títulos */
+}
+
+/* Valores de la derecha (Model, Type, etc.) */
+#vehicle_model, #task_type, #task_name, #workshop_number, #estimated_time {
+    -fx-text-fill: #F1F5F9;
+    -fx-font-weight: normal;
+}
+
+/* Contenedor de "NECESSARY PIECES" (el recuadro con bordes redondeados) */
+.pieces-container {
+    -fx-border-color: #F1F5F9;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 15;
+    -fx-padding: 10;
+    -fx-background-color: #1E293B;
+}
+
+/* Ajustes para el ScrollPane (hacerlo invisible para que no rompa el diseño) */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Estilo del botón verde "FINISH TASK" */
+#button {
+    -fx-background-color: #14532d; /* Verde oscuro */
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-border-color: #34d399; /* Borde verde más claro */
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+}
+
+#button:hover {
+    -fx-background-color: #166534; /* Un poco más claro al pasar el ratón */
+}
+
+#button:pressed {
+    -fx-background-color: #064e3b;
+}
