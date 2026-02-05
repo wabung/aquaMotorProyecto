@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="Card" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="126.0" prefWidth="250.0" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <Pane prefHeight="50.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label id="title" layoutX="14.0" layoutY="14.0" prefWidth="220.0" text="TOTAL STOCK">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </top>
+    <center>
+        <Pane prefHeight="76.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label id="result" layoutX="14.0" layoutY="0.0" prefWidth="220.0" text="VEHICLE NUMBER">
+                    <font>
+                        <Font name="System Bold" size="22.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </center>
+</BorderPane>

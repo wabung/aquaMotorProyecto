@@ -1,0 +1,303 @@
+/* --- ESTILOS DEL APP BAR (TITULO PRINCIPAL) --- */
+#titleWidget {
+    -fx-background-color: #0F172A;
+}
+
+#titleAppBar {
+    -fx-text-fill: #F1F5F9;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 2px;
+}
+
+#imageTitle {
+    -fx-opacity: 0.9;
+}
+
+/* --- ESTILOS DE LA CARTA (Information Card) --- */
+#Card {
+    -fx-background-color: #1E293B;    /* Azul oscuro fondo de la carta */
+    -fx-background-radius: 15;        /* Bordes redondeados */
+    -fx-border-color: #F1F5F9;        /* Borde sutil grisáceo */
+    -fx-border-radius: 15;
+    -fx-border-width: 1;
+}
+
+/* Estilo para el texto "TITULO" (Reparations/Month, etc) */
+#title {
+    -fx-text-fill: #F1F5F9;           /* Color gris azulado claro */
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0 0 5;
+}
+
+/* Estilo para el texto "CANTIDAD" (Los números o resultados) */
+#result {
+    -fx-text-fill: #F1F5F9;           /* Blanco puro */
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 0 5;
+}
+
+/* --- ESTILO PARA EL BOTÓN GRANDE (bigButton.fxml) --- */
+#button {
+    -fx-background-color: #14532D;    /* Verde principal */
+    -fx-text-fill: #F1F5F9;           /* Texto blanco */
+    -fx-background-radius: 10; /* Bordes redondeados */
+    -fx-border-color: #F1F5F9;
+    -fx-border-radius: 15;
+
+    -fx-border-width: 1;
+    -fx-font-weight: bold;
+
+    -fx-font-size: 28px;
+    -fx-text-overrun: clip;
+    -fx-wrap-text: false;
+    -fx-min-width: -font-relative;
+
+    -fx-cursor: hand;
+    -fx-transition: 0.3s;
+}
+
+/* Efecto cuando el ratón está encima */
+#button:hover {
+    -fx-background-color: #2ea043;
+}
+
+/* Efecto cuando se mantiene presionado */
+#button:armed {
+    -fx-background-color: #1a632b;
+}
+
+/* --- ESTILO PARA EL BOTÓN GRANDE (bigButton.fxml) --- */
+#btn {
+    -fx-background-color: #14532D;    /* Verde principal */
+    -fx-text-fill: #F1F5F9;           /* Texto blanco */
+    -fx-background-radius: 10; /* Bordes redondeados */
+    -fx-border-color: #F1F5F9;
+    -fx-border-radius: 15;
+
+    -fx-border-width: 1;
+    -fx-font-weight: bold;
+
+    -fx-font-size: 20px;
+    -fx-text-overrun: clip;
+    -fx-wrap-text: false;
+    -fx-min-width: -font-relative;
+
+    -fx-cursor: hand;
+    -fx-transition: 0.3s;
+}
+
+/* Efecto cuando el ratón está encima */
+#btn:hover {
+    -fx-background-color: #2ea043;
+}
+
+/* Efecto cuando se mantiene presionado */
+#btn:armed {
+    -fx-background-color: #1a632b;
+}
+
+/* ===========================
+   TEXTFIELDS OSCUROS
+   =========================== */
+
+.text-field, .password-field {
+    -fx-background-color: #1E293B;      /* Fondo oscuro */
+    -fx-text-fill: white;               /* Texto blanco */
+    -fx-prompt-text-fill: #94A3B8;      /* Placeholder gris suave */
+    -fx-background-radius: 0;           /* Esquinas rectas */
+    -fx-border-radius: 0;               /* Bordes rectos */
+    -fx-border-color: white;            /* Borde blanco */
+    -fx-border-width: 2;                /* Grosor del borde */
+    -fx-padding: 6 10;                  /* Espaciado interno */
+    -fx-font-size: 14px;                /* Tamaño de letra */
+}
+
+/* Hover */
+.text-field:hover, .password-field:hover {
+    -fx-border-color: #CBD5E1;          /* Blanco suave al pasar el ratón */
+}
+
+/* Focus */
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #38BDF8;          /* Azul claro al enfocar */
+    -fx-background-color: #0F172A;      /* Fondo más oscuro al enfocar */
+}
+
+/* ===========================
+   COMBOBOX OSCURO (igual que TextFields)
+   =========================== */
+
+.combo-box, #roleCombo {
+    -fx-background-color: #1E293B;      /* Fondo oscuro */
+    -fx-text-fill: white;               /* Texto blanco */
+    -fx-prompt-text-fill: #94A3B8;      /* Placeholder gris suave */
+    -fx-background-radius: 0;           /* Esquinas rectas */
+    -fx-border-radius: 0;               /* Bordes rectos */
+    -fx-border-color: white;            /* Borde blanco */
+    -fx-border-width: 2;                /* Grosor del borde */
+    -fx-padding: 6 10;                  /* Espaciado interno */
+    -fx-font-size: 14px;
+}
+
+/* Hover */
+.combo-box:hover, #roleCombo:hover {
+    -fx-border-color: #CBD5E1;          /* Blanco suave */
+}
+
+/* Focus */
+.combo-box:focused, #roleCombo:focused {
+    -fx-border-color: #38BDF8;          /* Azul claro */
+    -fx-background-color: #0F172A;      /* Más oscuro al enfocar */
+}
+
+/* Flecha del ComboBox */
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.combo-box .arrow-button:hover {
+    -fx-background-color: #334155;
+}
+
+.combo-box .arrow {
+    -fx-background-color: white;        /* Color de la flecha */
+}
+
+/* Popup del ComboBox */
+.combo-box-popup .list-view {
+    -fx-background-color: #1E293B;
+    -fx-control-inner-background: #1E293B;
+    -fx-border-color: white;
+    -fx-border-width: 1.5;
+}
+
+/* Celdas del popup */
+.combo-box-popup .list-cell {
+    -fx-background-color: #1E293B;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+/* ===========================
+   BARCHART OSCURO
+   =========================== */
+
+.dark-chart {
+    -fx-background-color: transparent; /* Fondo del nodo principal */
+}
+
+.dark-chart .chart-plot-background {
+    -fx-background-color: black; /* Fondo del área donde están las barras */
+}
+
+.dark-chart .chart-legend {
+    -fx-background-color: transparent;
+}
+
+.dark-chart .chart-vertical-grid-lines,
+.dark-chart .chart-horizontal-grid-lines {
+    -fx-stroke: #334155; /* Líneas discretas */
+}
+
+.dark-chart .axis {
+    -fx-tick-label-fill: white; /* Texto de los ejes */
+    -fx-axis-line-color: white;
+    -fx-tick-mark-color: white;
+}
+
+.dark-chart .bar {
+    -fx-bar-fill: #38BDF8; /* Color de las barras  */
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #334155;
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: #0F172A;
+}
+
+/* --- ESTILOS DEL NUEVO APPBAR (GridPane) --- */
+
+/* Contenedor principal del AppBar con navegación */
+#appbar-navigation {
+    -fx-background-color: #1E293B; /* Azul muy oscuro */
+    -fx-padding: 0 20 0 20;
+}
+
+/* Estilo para el botón de retroceso (<----) */
+#back-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #F1F5F9;
+    -fx-border-color: #334155;
+    -fx-border-radius: 5;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+#back-button:hover {
+    -fx-background-color: #1E293B;
+    -fx-border-color: #F1F5F9;
+}
+
+/* Estilo para el título central del AppBar */
+#title-nav {
+    -fx-text-fill: #F1F5F9;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}
+
+.user-card {
+    -fx-background-color: #1f2933;
+    -fx-padding: 15;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #c0cad5;
+    -fx-border-width: 1;
+}
+
+.user-data {
+    -fx-spacing: 6;
+}
+
+.user-label-title {
+    -fx-text-fill: #d0d7e2;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.user-label-value {
+    -fx-text-fill: #d0d7e2;
+    -fx-font-size: 11px;
+}
+
+/* Card principal, similar a la userCard */
+.vehicle-card {
+    -fx-background-color: #1f2933;
+    -fx-padding: 15;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #c0cad5;
+    -fx-border-width: 1;
+}
+
+/* Grid de texto del vehículo */
+.vehicle-grid {
+    -fx-hgap: 5;
+    -fx-vgap: 3;
+}
+
+/* Estilo de los títulos (Type:, Model:, ...) */
+.vehicle-label-title {
+    -fx-text-fill: #d0d7e2;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* Estilo de los valores (Type, Model, ...) */
+.vehicle-label-value {
+    -fx-text-fill: #d0d7e2;
+    -fx-font-size: 11px;
+}

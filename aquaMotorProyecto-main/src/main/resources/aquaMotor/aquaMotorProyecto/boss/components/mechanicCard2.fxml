@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:id="userCard" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="258.0" spacing="10" styleClass="user-card" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aquaMotor.aquaMotorProyecto.controllers.MechanicCardController">
+
+    <!-- Placeholder para imagen (vacío por defecto) -->
+    <ImageView fx:id="photoView" fitHeight="61.0" fitWidth="58.0" preserveRatio="true" smooth="true" styleClass="user-image" />
+
+    <!-- Datos del usuario alineados a la derecha -->
+    <VBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="240.0" spacing="6" styleClass="user-data">
+
+        <padding>
+            <!-- Empuja todo el texto hacia la derecha -->
+            <Insets right="8" />
+        </padding>
+
+        <HBox spacing="6">
+            <Label prefHeight="16.0" prefWidth="77.0" styleClass="user-label-title" text="NAME:" />
+            <Label fx:id="namelabel" prefHeight="16.0" prefWidth="139.0" styleClass="user-label-value" text="NAME" wrapText="true" />
+        </HBox>
+
+        <HBox spacing="6">
+            <Label prefHeight="16.0" prefWidth="97.0" styleClass="user-label-title" text="EMAIL:" />
+            <Label fx:id="emaillabel" prefWidth="160.0" styleClass="user-label-value" text="EMAIL" wrapText="true" />
+        </HBox>
+
+        <HBox prefHeight="16.0" prefWidth="108.0" spacing="6">
+            <Label prefHeight="16.0" prefWidth="109.0" styleClass="user-label-title" text="SPECIALITY:" />
+            <Label fx:id="phonelabel" prefHeight="16.0" prefWidth="120.0" styleClass="user-label-value" text="SPECIALITY" wrapText="true" />
+        </HBox>
+
+    </VBox>
+</HBox>

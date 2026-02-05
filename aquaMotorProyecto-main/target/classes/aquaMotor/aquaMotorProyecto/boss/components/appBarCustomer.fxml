@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane fx:controller="aquaMotor.aquaMotorProyecto.controllers.AppBarController" id="appbar-navigation" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="985.0" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane id="appbar-navigation" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="963.0" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.20001220703125" minWidth="10.0" prefWidth="128.79998779296875" />
@@ -18,13 +18,13 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <Button fx:id="backButton" onAction="#handleBack" mnemonicParsing="false" prefHeight="43.0" prefWidth="110.0" text="←" GridPane.rowIndex="1">
+        <Button id="back-button" mnemonicParsing="false" prefHeight="43.0" prefWidth="110.0" text="←" GridPane.rowIndex="1">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Button>
 
-        <Label id="title-nav" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="USER SIGN UP" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <Label id="title-nav" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="CUSTOMER SIGN UP" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
             <font>
                 <Font name="System Bold" size="36.0" />
             </font>

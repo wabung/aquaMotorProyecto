@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -18,24 +19,103 @@
    <children>
       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="986.0" style="-fx-background-color: #1E293B;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
 
-      <VBox alignment="TOP_CENTER" layoutY="100.0" prefHeight="583.0" prefWidth="986.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+      <VBox alignment="TOP_CENTER" layoutY="130.0" prefHeight="583.0" prefWidth="986.0" spacing="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
          <padding>
-            <Insets bottom="20.0" left="50.0" right="50.0" top="30.0" />
+            <Insets bottom="20.0" left="50.0" right="50.0" top="40.0" />
          </padding>
 
          <children>
-            <HBox alignment="CENTER" spacing="40.0">
+            <HBox prefHeight="140.0" prefWidth="646.0" spacing="350.0">
                <children>
-
+                  <AnchorPane minHeight="140.0" prefHeight="100.0" prefWidth="284.0" styleClass="vehicle-card">
+                  
+                      <stylesheets>
+                          <URL value="@vehiclecard.css" />
+                        <URL value="@../styles/components.css" />
+                      </stylesheets>
+                  
+                      <children>
+                          <GridPane layoutX="111.0" layoutY="17.0" prefHeight="106.0" prefWidth="158.0" styleClass="vehicle-grid" AnchorPane.rightAnchor="10.0">
+                              <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                  <!-- Labels título -->
+                                  <Label fx:id="typeLbl" styleClass="vehicle-label-title" text="Type:" />
+                                  <Label fx:id="modelLbl" styleClass="vehicle-label-title" text="Model:" GridPane.rowIndex="1" />
+                                  <Label fx:id="colorLbl" styleClass="vehicle-label-title" text="Color:" GridPane.rowIndex="2" />
+                                  <Label fx:id="yearLbl" styleClass="vehicle-label-title" text="Year:" GridPane.rowIndex="3" />
+                                  <Label fx:id="registrationLbl" styleClass="vehicle-label-title" text="Registration:" GridPane.rowIndex="4" />
+                                  <Label fx:id="needrepairLbl" styleClass="vehicle-label-title" text="Need repair:" GridPane.rowIndex="5" />
+                                  <Label fx:id="priceLbl" styleClass="vehicle-label-title" text="Price:" GridPane.rowIndex="6" />
+                  
+                                  <!-- Labels valor -->
+                                  <Label fx:id="typeTxt" styleClass="vehicle-label-value" text="Type" GridPane.columnIndex="1" />
+                                  <Label fx:id="modelTxt" styleClass="vehicle-label-value" text="Model" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                  <Label fx:id="colorTxt" styleClass="vehicle-label-value" text="Color" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                  <Label fx:id="yearTxt" styleClass="vehicle-label-value" text="Year" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                  <Label fx:id="registrationTxt" styleClass="vehicle-label-value" text="Registration" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                  <Label fx:id="needrepairTxt" styleClass="vehicle-label-value" text="Need repair" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                  <Label fx:id="priceTxt" styleClass="vehicle-label-value" text="Price" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              </children>
+                          </GridPane>
+                  
+                          <ImageView fx:id="vehicleImg" fitHeight="65.0" fitWidth="66.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" />
+                      </children>
+                  </AnchorPane>
+                  <HBox fx:id="userCard" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="258.0" spacing="10.0" styleClass="user-card" stylesheets="@../styles/components.css">
+                  
+                      <!-- Placeholder para imagen (vacío por defecto) -->
+                      <ImageView fx:id="photoView" fitHeight="61.0" fitWidth="58.0" preserveRatio="true" smooth="true" styleClass="user-image" />
+                  
+                      <!-- Datos del usuario alineados a la derecha -->
+                      <VBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="240.0" spacing="6" styleClass="user-data">
+                  
+                          <padding>
+                              <!-- Empuja todo el texto hacia la derecha -->
+                              <Insets right="8" />
+                          </padding>
+                  
+                          <HBox spacing="6">
+                              <Label prefHeight="16.0" prefWidth="77.0" styleClass="user-label-title" text="NAME:" />
+                              <Label fx:id="namelabel" prefHeight="16.0" prefWidth="139.0" styleClass="user-label-value" text="NAME" wrapText="true" />
+                          </HBox>
+                  
+                          <HBox spacing="6">
+                              <Label prefHeight="16.0" prefWidth="97.0" styleClass="user-label-title" text="EMAIL:" />
+                              <Label fx:id="emaillabel" prefWidth="160.0" styleClass="user-label-value" text="EMAIL" wrapText="true" />
+                          </HBox>
+                  
+                          <HBox prefHeight="16.0" prefWidth="108.0" spacing="6">
+                              <Label prefHeight="16.0" prefWidth="109.0" styleClass="user-label-title" text="SPECIALITY:" />
+                              <Label fx:id="phonelabel" prefHeight="16.0" prefWidth="120.0" styleClass="user-label-value" text="SPECIALITY" wrapText="true" />
+                          </HBox>
+                  
+                      </VBox>
+                  </HBox>
                </children>
             </HBox>
 
-            <GridPane hgap="15.0" maxWidth="800.0" vgap="15.0">
+
+            <GridPane alignment="CENTER" hgap="15.0" maxWidth="900.0" vgap="15.0">
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin>
                <columnConstraints>
-                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
-                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="240.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
@@ -64,16 +144,17 @@
                </children>
             </GridPane>
 
-            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="280.0" style="-fx-background-color: #14532D; -fx-text-fill: white; -fx-background-radius: 25; -fx-border-color: #22C55E; -fx-border-radius: 25; -fx-cursor: hand;" text="REGISTER REPAIR">
+            <Button mnemonicParsing="false" onAction="#handleRegisterRepair" prefHeight="45.0" prefWidth="280.0" style="-fx-background-color: #14532D; -fx-text-fill: white; -fx-background-radius: 25; -fx-border-color: #22C55E; -fx-border-radius: 25; -fx-cursor: hand;" text="REGISTER REPAIR">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets top="60.0" />
                </VBox.margin>
             </Button>
+
          </children>
       </VBox>
-      <fx:include source="boss/components/titleCard.fxml" />
+      <fx:include source="boss/components/appBar.fxml" />
    </children>
 </AnchorPane>
