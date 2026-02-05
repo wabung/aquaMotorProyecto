@@ -11,14 +11,9 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            // Correct Path to the main view
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/aquaMotor/login/views/loginScreen.fxml"));
-
             Scene scene = new Scene(fxmlLoader.load());
-
-            stage.setTitle("AquaMotor - Mechanic System");
-            stage.setMinWidth(1024);
-            stage.setMinHeight(768);
+            stage.setTitle("AquaMotor - Login");
             stage.setScene(scene);
             stage.show();
 
@@ -27,6 +22,7 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+
 
     public static void main(String[] args) {
         launch(args);

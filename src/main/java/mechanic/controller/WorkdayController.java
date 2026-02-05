@@ -67,7 +67,7 @@ public class WorkdayController implements Initializable {
 
         // Opcional: Si tuvieras un mechanic.controller para ListWorkday, le pasarías los datos aquí:
         // VehicleCardController cardController = loader.getController();
-        // cardController.setVehicleData(id, model, desc);
+        // cardController.setVehicleData(id, database.model, desc);
 
         tasksContainer.getChildren().add(taskNode);
     }
