@@ -15,16 +15,16 @@ public class CrudParts implements DaoParts {
     public void create(Parts u) {
         Session session = HibernateUtil.getSession();
         Transaction tx = null;
-        try{
+        try {
             tx = session.beginTransaction();
             session.save(u);
             tx.commit();
-            System.out.println("Parts created with id: "+u.getPart_id());
+            System.out.println("Parts created with id: " + u.getPartId());
         } catch (Exception e) {
             if (tx != null) tx.rollback();
             System.err.println("Fatal Error creating the Parts");
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
     }
@@ -33,15 +33,15 @@ public class CrudParts implements DaoParts {
     public Parts readById(int id) {
         Session session = HibernateUtil.getSession();
         Parts u = null;
-        try{
+        try {
             u = session.get(Parts.class, id);
 
-            if(u == null){
+            if (u == null) {
                 System.err.println("The Parts with that id, doesn't exist in the data base ");
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             session.close();
         }
 
@@ -53,15 +53,15 @@ public class CrudParts implements DaoParts {
         Session session = HibernateUtil.getSession();
         List<Parts> lista = null;
 
-        try{
+        try {
             String hql = "FROM Parts";
-            Query<Parts> query = session.createQuery(hql,Parts.class);
+            Query<Parts> query = session.createQuery(hql, Parts.class);
             lista = query.list();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println("Fatal error creating the query");
             e.printStackTrace();
 
-        }finally {
+        } finally {
             session.close();
         }
         return lista;
@@ -77,10 +77,10 @@ public class CrudParts implements DaoParts {
             session.update(u);
             tx.commit();
             System.out.println("Parts updated correctly");
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println("Fatal error updating the Parts");
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
     }
@@ -90,20 +90,20 @@ public class CrudParts implements DaoParts {
         Session session = HibernateUtil.getSession();
         Transaction tx = null;
 
-        try{
+        try {
             tx = session.beginTransaction();
             Parts u = readById(id);
-            if(u != null){
+            if (u != null) {
                 session.delete(readById(id));
                 tx.commit();
                 System.out.println("Parts deleted correctly");
-            }else {
+            } else {
                 System.err.println("The Parts with that id, doesn't exist in the data base ");
             }
         } catch (Exception e) {
             System.err.println("Fatal error deleting the Parts");
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
     }

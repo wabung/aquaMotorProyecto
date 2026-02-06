@@ -9,62 +9,33 @@ public class Mechanic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "mechanic_id")
-    private int mechanic_id;
-
-    @Column(name = "user_id", nullable = false)
-    private int user_id;
-
-    @Column(name="speciality_type", length = 100)
-    private String speciality_type;
-
-    @Column(name = "isBoss")
-    private boolean isBoss = false;
+    private int mechanicId;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
 
-    public Mechanic(int user_id, String speciality_type, boolean isBoss) {
-        this.user_id = user_id;
-        this.speciality_type = speciality_type;
-        this.isBoss = isBoss;
-    }
+    @Column(name = "speciality_type", length = 100)
+    private String specialityType;
 
-    public Mechanic( int user_id, boolean isBoss) {
-        this.user_id = user_id;
-        this.isBoss = isBoss;
-    }
+    @Column(name = "isBoss") // En la DB lo dejaste como isBoss (camelCase en columna)
+    private boolean isBoss = false;
 
     public Mechanic() {
-
     }
 
-    public int getMechanic_id() {
-        return mechanic_id;
+    public Mechanic(User user, String specialityType, boolean isBoss) {
+        this.user = user;
+        this.specialityType = specialityType;
+        this.isBoss = isBoss;
     }
 
-    public void setMechanic_id(int mechanic_id) {
-        this.mechanic_id = mechanic_id;
+    public int getMechanicId() {
+        return mechanicId;
     }
 
-    public String getSpeciality_type() {
-        return speciality_type;
-    }
-
-    public void setSpeciality_type(String speciality_type) {
-        this.speciality_type = speciality_type;
-    }
-
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public boolean isBoss() {
-        return isBoss;
-    }
-
-    public void setBoss(boolean boss) {
-        isBoss = boss;
+    public void setMechanicId(int mechanicId) {
+        this.mechanicId = mechanicId;
     }
 
     public User getUser() {
@@ -73,5 +44,21 @@ public class Mechanic {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getSpecialityType() {
+        return specialityType;
+    }
+
+    public void setSpecialityType(String specialityType) {
+        this.specialityType = specialityType;
+    }
+
+    public boolean isBoss() {
+        return isBoss;
+    }
+
+    public void setBoss(boolean boss) {
+        isBoss = boss;
     }
 }

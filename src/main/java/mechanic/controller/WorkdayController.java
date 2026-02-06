@@ -65,7 +65,7 @@ public class WorkdayController implements Initializable {
         // Asumiendo que ListWorkday.fxml es un BorderPane o AnchorPane
         Node taskNode = loader.load();
 
-        // Opcional: Si tuvieras un mechanic.controller para ListWorkday, le pasarías los datos aquí:
+        // Opcional: Si tuvieras un mechanic.login.controller para ListWorkday, le pasarías los datos aquí:
         // VehicleCardController cardController = loader.getController();
         // cardController.setVehicleData(id, database.model, desc);
 

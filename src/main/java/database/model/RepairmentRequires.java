@@ -29,7 +29,7 @@ public class RepairmentRequires {
         this.part = part;
         this.repairment = repairment;
         this.quantity = quantity;
-        this.id = new RepairmentRequiresId(part.getPart_id(), repairment.getRepairmentId());
+        this.id = new RepairmentRequiresId(part.getPartId(), repairment.getRepairmentId());
     }
 
     public RepairmentRequiresId getId() {

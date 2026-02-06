@@ -1,8 +1,9 @@
 package database.model;
 
 import jakarta.persistence.*;
+
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.sql.Date;
 
 @Entity
 @Table(name = "sold")
@@ -13,38 +14,30 @@ public class Sold {
     @Column(name = "sold_id")
     private int soldId;
 
-    @Column(name = "offer_id", nullable = false, unique = true)
-    private int offerId;
+    @OneToOne
+    @JoinColumn(name = "offer_id", nullable = false, unique = true)
+    private Offer offer;
 
-    @Column(name = "final_price", nullable = false, precision = 15, scale = 2)
+    @Column(name = "final_price", nullable = false)
     private BigDecimal finalPrice;
 
     @Column(name = "final_date", nullable = false)
-    private LocalDate finalDate;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "offer_id", nullable = false, unique = true, insertable = false, updatable = false)
-    private Offer offer;
+    private Date finalDate;
 
     public Sold() {
     }
 
-    public Sold(int offerId, BigDecimal finalPrice, LocalDate finalDate) {
-        this.offerId = offerId;
-        this.finalPrice = finalPrice;
-        this.finalDate = finalDate;
-    }
-
+    // Getters y Setters...
     public int getSoldId() {
         return soldId;
     }
 
-    public int getOfferId() {
-        return offerId;
+    public Offer getOffer() {
+        return offer;
     }
 
-    public void setOfferId(int offerId) {
-        this.offerId = offerId;
+    public void setOffer(Offer offer) {
+        this.offer = offer;
     }
 
     public BigDecimal getFinalPrice() {
@@ -55,19 +48,11 @@ public class Sold {
         this.finalPrice = finalPrice;
     }
 
-    public LocalDate getFinalDate() {
+    public Date getFinalDate() {
         return finalDate;
     }
 
-    public void setFinalDate(LocalDate finalDate) {
+    public void setFinalDate(Date finalDate) {
         this.finalDate = finalDate;
-    }
-
-    public Offer getOffer() {
-        return offer;
-    }
-
-    public void setOffer(Offer offer) {
-        this.offer = offer;
     }
 }

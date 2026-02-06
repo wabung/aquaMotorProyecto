@@ -11,9 +11,6 @@ public class SalesPerson {
     @Column(name = "salesperson_id")
     private int salespersonId;
 
-    @Column(name = "user_id", nullable = false)
-    private int userId;
-
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
@@ -21,20 +18,16 @@ public class SalesPerson {
     public SalesPerson() {
     }
 
-    public SalesPerson(int userId) {
-        this.userId = userId;
+    public SalesPerson(User user) {
+        this.user = user;
     }
 
     public int getSalespersonId() {
         return salespersonId;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setSalespersonId(int salespersonId) {
+        this.salespersonId = salespersonId;
     }
 
     public User getUser() {

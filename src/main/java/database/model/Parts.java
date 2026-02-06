@@ -2,8 +2,7 @@ package database.model;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "parts")
@@ -12,32 +11,28 @@ public class Parts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "part_id")
-    private int part_id;
+    private int partId;
 
     @Column(name = "name", length = 255, nullable = false)
     private String name;
 
-    @Column(name = "price", precision = 10, scale = 2, nullable = false)
-    private double price;
+    @Column(name = "price", nullable = false)
+    private BigDecimal price;
 
-    @OneToMany(mappedBy = "part", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<RepairmentRequires> requirements = new ArrayList<>();
+    public Parts() {
+    }
 
-    public Parts( String name, double price) {
+    public Parts(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
     }
 
-    public int getPart_id() {
-        return part_id;
+    public int getPartId() {
+        return partId;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPartId(int partId) {
+        this.partId = partId;
     }
 
     public String getName() {
@@ -48,4 +43,11 @@ public class Parts {
         this.name = name;
     }
 
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 }

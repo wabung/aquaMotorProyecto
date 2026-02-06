@@ -3,7 +3,7 @@ package database.model;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.sql.Date;
 
 @Entity
 @Table(name = "offer")
@@ -11,73 +11,68 @@ public class Offer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "OfferId")
-    private Integer offerId;
+    @Column(name = "offer_id") // Antes era "OfferId"
+    private int offerId;
 
-    @Column(name = "VehicleId", nullable = false)
-    private Integer vehicleId;
+    @ManyToOne
+    @JoinColumn(name = "vehicle_id", nullable = false)
+    private Vehicle vehicle;
 
-    @Column(name = "ClientId", nullable = false)
-    private Integer clientId;
+    @ManyToOne
+    @JoinColumn(name = "client_id", nullable = false)
+    private Client client;
 
-    @Column(name = "SalespersonId", nullable = false)
-    private Integer salespersonId;
+    @ManyToOne
+    @JoinColumn(name = "salesperson_id", nullable = false)
+    private SalesPerson salesperson;
 
-    @Column(name = "Deadline", nullable = false)
-    private LocalDate deadline;
+    @Column(name = "deadline", nullable = false)
+    private Date deadline;
 
-    @Column(name = "PriceOffer", nullable = false, precision = 15, scale = 2)
+    @Column(name = "price_offer", nullable = false) // Antes era "PriceOffer"
     private BigDecimal priceOffer;
 
     public Offer() {
     }
 
-    public Offer(Integer vehicleId, Integer clientId, Integer salespersonId,
-                 LocalDate deadline, BigDecimal priceOffer) {
-        this.vehicleId = vehicleId;
-        this.clientId = clientId;
-        this.salespersonId = salespersonId;
-        this.deadline = deadline;
-        this.priceOffer = priceOffer;
-    }
-
-    public Integer getOfferId() {
+    // Getters y Setters
+    public int getOfferId() {
         return offerId;
     }
 
-    public void setOfferId(Integer offerId) {
+    public void setOfferId(int offerId) {
         this.offerId = offerId;
     }
 
-    public Integer getVehicleId() {
-        return vehicleId;
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
-    public void setVehicleId(Integer vehicleId) {
-        this.vehicleId = vehicleId;
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
-    public Integer getClientId() {
-        return clientId;
+    public Client getClient() {
+        return client;
     }
 
-    public void setClientId(Integer clientId) {
-        this.clientId = clientId;
+    public void setClient(Client client) {
+        this.client = client;
     }
 
-    public Integer getSalespersonId() {
-        return salespersonId;
+    public SalesPerson getSalesperson() {
+        return salesperson;
     }
 
-    public void setSalespersonId(Integer salespersonId) {
-        this.salespersonId = salespersonId;
+    public void setSalesperson(SalesPerson salesperson) {
+        this.salesperson = salesperson;
     }
 
-    public LocalDate getDeadline() {
+    public Date getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(LocalDate deadline) {
+    public void setDeadline(Date deadline) {
         this.deadline = deadline;
     }
 
@@ -87,17 +82,5 @@ public class Offer {
 
     public void setPriceOffer(BigDecimal priceOffer) {
         this.priceOffer = priceOffer;
-    }
-
-    @Override
-    public String toString() {
-        return "Offer{" +
-                "offerId=" + offerId +
-                ", vehicleId=" + vehicleId +
-                ", clientId=" + clientId +
-                ", salespersonId=" + salespersonId +
-                ", deadline=" + deadline +
-                ", priceOffer=" + priceOffer +
-                '}';
     }
 }

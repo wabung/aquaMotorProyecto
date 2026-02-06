@@ -9,27 +9,25 @@ public class Boss {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "boss_id")
-    private int boss_id;
-
-    @Column(name = "user_id", nullable = false)
-    private int user_id;
+    private int bossId;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name ="user_id", nullable = false, unique = true)
+    @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
 
-    public Boss(int user_id) {
-        this.user_id = user_id;
+    public Boss() {
     }
 
-    public Boss() {}
-
-    public int getUser_id() {
-        return user_id;
+    public Boss(User user) {
+        this.user = user;
     }
 
-    public int getBoss_id() {
-        return boss_id;
+    public int getBossId() {
+        return bossId;
+    }
+
+    public void setBossId(int bossId) {
+        this.bossId = bossId;
     }
 
     public User getUser() {

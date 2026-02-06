@@ -2,39 +2,59 @@ package database.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", nullable = false, updatable = false)
-    private int id;
+    @Column(name = "user_id")
+    private int userId;
 
-    @Column(name = "name", length = 200, nullable = false)
+    @Column(name = "name", nullable = false, length = 200)
     private String name;
 
-    @Column(name = "email", length = 100, nullable = false, unique = true)
+    @Column(name = "email", nullable = false, length = 100, unique = true)
     private String email;
 
-    @Column(name = "password", length = 16, nullable = false)
+    @Column(name = "password", nullable = false, length = 16)
     private String password;
 
-    @OneToOne(mappedBy = "boss")
+    // Relaciones para poder acceder desde el Usuario a su rol específico
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
     private Boss boss;
 
-    @OneToOne(mappedBy = "mechanic")
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
     private Mechanic mechanic;
 
-    @OneToOne(mappedBy = "salesPerson")
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
     private SalesPerson salesPerson;
 
     public User() {
     }
 
-    public User(String email, String password) {
+    public User(String name, String email, String password) {
+        this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -53,28 +73,15 @@ public class User {
         this.password = password;
     }
 
-    public int getId() {
-        return id;
+    public Boss getBoss() {
+        return boss;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Mechanic getMechanic() {
+        return mechanic;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "\nemail='" + email + '\'' +
-                ", id=" + id + '\'' +
-                ", name=" + name + '\'' +
-                '}';
+    public SalesPerson getSalesPerson() {
+        return salesPerson;
     }
 }

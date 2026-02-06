@@ -7,9 +7,15 @@ import java.util.List;
 public interface DaoUser {
 
     public void create(User u);
+
     public User readById(int id);
+
     public List<User> read();
+
     public void update(User u);
+
     public void delete(int id);
+
+    public User findByCredentials(String email, String password);
 
 }

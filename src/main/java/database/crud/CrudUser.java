@@ -15,16 +15,16 @@ public class CrudUser implements DaoUser {
     public void create(User u) {
         Session session = HibernateUtil.getSession();
         Transaction tx = null;
-        try{
+        try {
             tx = session.beginTransaction();
             session.save(u);
             tx.commit();
-            System.out.println("User created with id: "+u.getId());
+            System.out.println("User created with id: " + u.getUserId());
         } catch (Exception e) {
             if (tx != null) tx.rollback();
             System.err.println("Fatal Error creating the user");
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
     }
@@ -33,15 +33,15 @@ public class CrudUser implements DaoUser {
     public User readById(int id) {
         Session session = HibernateUtil.getSession();
         User u = null;
-        try{
+        try {
             u = session.get(User.class, id);
 
-            if(u == null){
+            if (u == null) {
                 System.err.println("The user with that id, doesn't exist in the data base ");
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             session.close();
         }
 
@@ -53,15 +53,15 @@ public class CrudUser implements DaoUser {
         Session session = HibernateUtil.getSession();
         List<User> lista = null;
 
-        try{
+        try {
             String hql = "FROM User";
-            Query<User> query = session.createQuery(hql,User.class);
+            Query<User> query = session.createQuery(hql, User.class);
             lista = query.list();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println("Fatal error creating the query");
             e.printStackTrace();
 
-        }finally {
+        } finally {
             session.close();
         }
         return lista;
@@ -77,10 +77,10 @@ public class CrudUser implements DaoUser {
             session.update(u);
             tx.commit();
             System.out.println("User updated correctly");
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println("Fatal error updating the user");
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
     }
@@ -90,21 +90,40 @@ public class CrudUser implements DaoUser {
         Session session = HibernateUtil.getSession();
         Transaction tx = null;
 
-        try{
+        try {
             tx = session.beginTransaction();
             User u = readById(id);
-            if(u != null){
+            if (u != null) {
                 session.delete(readById(id));
                 tx.commit();
                 System.out.println("User deleted correctly");
-            }else {
+            } else {
                 System.err.println("The user with that id, doesn't exist in the data base ");
             }
         } catch (Exception e) {
             System.err.println("Fatal error deleting the user");
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
+        }
+    }
+
+    @Override
+    public User findByCredentials(String email, String password) {
+        try (Session session = HibernateUtil.getSession()) {
+            String hql = "SELECT u FROM User u " +
+                    "LEFT JOIN FETCH u.boss " +
+                    "LEFT JOIN FETCH u.mechanic " +
+                    "LEFT JOIN FETCH u.salesPerson " +
+                    "WHERE u.email = :email AND u.password = :pass";
+
+            return session.createQuery(hql, User.class)
+                    .setParameter("email", email)
+                    .setParameter("pass", password)
+                    .uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }

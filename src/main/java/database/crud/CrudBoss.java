@@ -15,16 +15,16 @@ public class CrudBoss implements DaoBoss {
     public void create(Boss b) {
         Session session = HibernateUtil.getSession();
         Transaction tx = null;
-        try{
+        try {
             tx = session.beginTransaction();
             session.save(b);
             tx.commit();
-            System.out.println("Boss created with id: "+b.getBoss_id());
+            System.out.println("Boss created with id: " + b.getBossId());
         } catch (Exception e) {
             if (tx != null) tx.rollback();
             System.err.println("Fatal Error creating the Boss");
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
     }
@@ -33,15 +33,15 @@ public class CrudBoss implements DaoBoss {
     public Boss readById(int id) {
         Session session = HibernateUtil.getSession();
         Boss u = null;
-        try{
+        try {
             u = session.get(Boss.class, id);
 
-            if(u == null){
+            if (u == null) {
                 System.err.println("The Boss with that id, doesn't exist in the data base ");
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             session.close();
         }
 
@@ -53,15 +53,15 @@ public class CrudBoss implements DaoBoss {
         Session session = HibernateUtil.getSession();
         List<Boss> lista = null;
 
-        try{
+        try {
             String hql = "FROM Boss";
-            Query<Boss> query = session.createQuery(hql,Boss.class);
+            Query<Boss> query = session.createQuery(hql, Boss.class);
             lista = query.list();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println("Fatal error creating the query");
             e.printStackTrace();
 
-        }finally {
+        } finally {
             session.close();
         }
         return lista;
@@ -77,10 +77,10 @@ public class CrudBoss implements DaoBoss {
             session.update(b);
             tx.commit();
             System.out.println("Boss updated correctly");
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println("Fatal error updating the Boss");
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
     }
@@ -90,20 +90,20 @@ public class CrudBoss implements DaoBoss {
         Session session = HibernateUtil.getSession();
         Transaction tx = null;
 
-        try{
+        try {
             tx = session.beginTransaction();
             Boss u = readById(id);
-            if(u != null){
+            if (u != null) {
                 session.delete(readById(id));
                 tx.commit();
                 System.out.println("Boss deleted correctly");
-            }else {
+            } else {
                 System.err.println("The Boss with that id, doesn't exist in the data base ");
             }
         } catch (Exception e) {
             System.err.println("Fatal error deleting the Boss");
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
     }

@@ -15,16 +15,16 @@ public class CrudMechanic implements DaoMechanic {
     public void create(Mechanic u) {
         Session session = HibernateUtil.getSession();
         Transaction tx = null;
-        try{
+        try {
             tx = session.beginTransaction();
             session.save(u);
             tx.commit();
-            System.out.println("Mechanic created with id: "+u.getMechanic_id());
+            System.out.println("Mechanic created with id: " + u.getMechanicId());
         } catch (Exception e) {
             if (tx != null) tx.rollback();
             System.err.println("Fatal Error creating the Mechanic");
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
     }
@@ -33,15 +33,15 @@ public class CrudMechanic implements DaoMechanic {
     public Mechanic readById(int id) {
         Session session = HibernateUtil.getSession();
         Mechanic u = null;
-        try{
+        try {
             u = session.get(Mechanic.class, id);
 
-            if(u == null){
+            if (u == null) {
                 System.err.println("The Mechanic with that id, doesn't exist in the data base ");
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             session.close();
         }
 
@@ -53,15 +53,15 @@ public class CrudMechanic implements DaoMechanic {
         Session session = HibernateUtil.getSession();
         List<Mechanic> lista = null;
 
-        try{
+        try {
             String hql = "FROM Mechanic";
-            Query<Mechanic> query = session.createQuery(hql,Mechanic.class);
+            Query<Mechanic> query = session.createQuery(hql, Mechanic.class);
             lista = query.list();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println("Fatal error creating the query");
             e.printStackTrace();
 
-        }finally {
+        } finally {
             session.close();
         }
         return lista;
@@ -77,10 +77,10 @@ public class CrudMechanic implements DaoMechanic {
             session.update(u);
             tx.commit();
             System.out.println("Mechanic updated correctly");
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println("Fatal error updating the Mechanic");
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
     }
@@ -90,20 +90,20 @@ public class CrudMechanic implements DaoMechanic {
         Session session = HibernateUtil.getSession();
         Transaction tx = null;
 
-        try{
+        try {
             tx = session.beginTransaction();
             Mechanic u = readById(id);
-            if(u != null){
+            if (u != null) {
                 session.delete(readById(id));
                 tx.commit();
                 System.out.println("Mechanic deleted correctly");
-            }else {
+            } else {
                 System.err.println("The Mechanic with that id, doesn't exist in the data base ");
             }
         } catch (Exception e) {
             System.err.println("Fatal error deleting the Mechanic");
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
     }
