@@ -26,7 +26,6 @@ public class LoginController {
 
     @FXML
     private void handleLogin(ActionEvent event) {
-        // --- LLAMADA 1: Inicia validación en UtilsLogin ---
         UtilsLogin.login(usernameField.getText().trim(), passwordField.getText().trim(), event);
     }
 }

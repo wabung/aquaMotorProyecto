@@ -5,43 +5,46 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@../styles/dashboard.css"
+<AnchorPane fx:id="rootPane" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../styles/dashboard.css"
             xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="mechanic.controller.MechanicDashboardController">
 
-   <children>
-      <VBox alignment="TOP_CENTER" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
 
-            <fx:include fx:id="header" source="../components/TitleCard.fxml" />
+                <fx:include fx:id="header" source="../components/TitleCard.fxml"/>
 
-            <HBox alignment="CENTER" spacing="30.0" VBox.vgrow="ALWAYS">
-               <children>
-                  <fx:include fx:id="cardVehicles" source="../components/InformationCard.fxml" HBox.hgrow="ALWAYS" />
-                  <fx:include fx:id="active" source="../components/InformationCard.fxml" HBox.hgrow="ALWAYS" />
-                  <fx:include fx:id="cardPending" source="../components/InformationCard.fxml" HBox.hgrow="ALWAYS" />
-               </children>
-               <padding>
-                  <Insets bottom="30.0" left="20.0" right="20.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-               </VBox.margin>
-            </HBox>
+                <HBox alignment="CENTER" spacing="30.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <fx:include fx:id="cardVehicles" source="../components/InformationCard.fxml"
+                                    HBox.hgrow="ALWAYS"/>
+                        <fx:include fx:id="active" source="../components/InformationCard.fxml" HBox.hgrow="ALWAYS"/>
+                        <fx:include fx:id="cardPending" source="../components/InformationCard.fxml"
+                                    HBox.hgrow="ALWAYS"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="30.0" left="20.0" right="20.0"/>
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+                    </VBox.margin>
+                </HBox>
 
-            <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="SOMETIMES">
-               <children>
-                  <fx:include fx:id="btnMyWorkDay" source="../components/BigButton.fxml" />
-                  <fx:include fx:id="btnWorkInProgress" source="../components/BigButton.fxml" />
-               </children>
-               <VBox.margin>
-                  <Insets bottom="80.0" left="90.0" right="90.0" top="20.0" />
-               </VBox.margin>
-            </VBox>
-         </children>
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-      </VBox>
-   </children>
+                <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="SOMETIMES">
+                    <children>
+                        <fx:include fx:id="btnMyWorkDay" source="../components/BigButton.fxml"/>
+                        <fx:include fx:id="btnWorkInProgress" source="../components/BigButton.fxml"/>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="80.0" left="90.0" right="90.0" top="20.0"/>
+                    </VBox.margin>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+        </VBox>
+    </children>
 </AnchorPane>

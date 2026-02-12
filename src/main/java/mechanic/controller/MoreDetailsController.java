@@ -6,27 +6,31 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class MoreDetailsController implements Initializable {
 
-    // --- Componentes UI ---
-    @FXML private ImageView vehicleImage;
-    @FXML private Label lblModel;
-    @FXML private Label lblPlate;
-    @FXML private Label lblNotes;
-    @FXML private VBox historyContainer; // Contenedor para la lista de historial
-    @FXML private Button btnStartTask;
+    @FXML
+    private ImageView vehicleImage;
+    @FXML
+    private Label lblModel;
+    @FXML
+    private Label lblPlate;
+    @FXML
+    private Label lblNotes;
+    @FXML
+    private VBox historyContainer;
+    @FXML
+    private Button btnStartTask;
 
-    // --- Inyección del Controlador Incluido (AppBar) ---
-    // IMPORTANTE: El nombre debe ser el fx:id del include ("appBar") + "Controller"
-    @FXML private AppBarController appBarController;
+    @FXML
+    private AppBarController appBarController;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // 1. Configurar la barra de navegación automáticamente
         if (appBarController != null) {
             appBarController.setTitle("TASK DETAILS");
             appBarController.setOnBackButtonAction(() -> {
@@ -34,16 +38,14 @@ public class MoreDetailsController implements Initializable {
                 // Aquí iría tu lógica para cerrar ventana o cambiar escena
             });
         }
-
-        // 2. Configurar acciones
-        //btnStartTask.setOnAction(event -> handleStartTask());
     }
 
     /**
      * Método para recibir los datos desde la vista anterior.
-     * @param model Modelo del coche
-     * @param plate Matrícula
-     * @param notes Descripción del problema
+     *
+     * @param model   Modelo del coche
+     * @param plate   Matrícula
+     * @param notes   Descripción del problema
      * @param history Lista de reparaciones previas
      */
     public void setTaskData(String model, String plate, String notes, List<String> history) {
@@ -56,7 +58,7 @@ public class MoreDetailsController implements Initializable {
     }
 
     private void populateHistory(List<String> historyItems) {
-        historyContainer.getChildren().clear(); // Limpiar datos de ejemplo del FXML
+        historyContainer.getChildren().clear();
 
         if (historyItems == null || historyItems.isEmpty()) {
             Label placeholder = new Label("No previous history.");
@@ -67,7 +69,7 @@ public class MoreDetailsController implements Initializable {
 
         for (String item : historyItems) {
             Label itemLabel = new Label("• " + item);
-            itemLabel.getStyleClass().add("repair-item"); // Usar el estilo definido en CSS
+            itemLabel.getStyleClass().add("repair-item");
             historyContainer.getChildren().add(itemLabel);
         }
     }

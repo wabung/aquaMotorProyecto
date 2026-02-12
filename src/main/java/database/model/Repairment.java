@@ -30,8 +30,10 @@ public class Repairment {
     @Column(name = "description", length = 100, nullable = false)
     private String description;
 
-    @Column(name = "status", length = 50)
-    private String status;
+    // CAMBIO: Usamos Enumerated para que coincida con el ENUM de SQL
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private RepairmentStatus status;
 
     @Column(name = "estimated_budget", precision = 10, scale = 2)
     private BigDecimal estimatedBudget;
@@ -50,14 +52,17 @@ public class Repairment {
     public Repairment() {
     }
 
-    public Repairment(int vehicleId, int mechanicId, LocalDate startDate, String status, BigDecimal estimatedBudget) {
+    // CONSTRUCTOR CORREGIDO: Añadida la descripción y cambiado el tipo de status
+    public Repairment(int vehicleId, int mechanicId, LocalDate startDate, String description, RepairmentStatus status, BigDecimal estimatedBudget) {
         this.vehicleId = vehicleId;
         this.mechanicId = mechanicId;
         this.startDate = startDate;
+        this.description = description;
         this.status = status;
         this.estimatedBudget = estimatedBudget;
     }
 
+    // Getters y Setters...
     public int getRepairmentId() {
         return repairmentId;
     }
@@ -94,11 +99,11 @@ public class Repairment {
         this.endDate = endDate;
     }
 
-    public String getStatus() {
+    public RepairmentStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(RepairmentStatus status) {
         this.status = status;
     }
 
@@ -108,6 +113,14 @@ public class Repairment {
 
     public void setEstimatedBudget(BigDecimal estimatedBudget) {
         this.estimatedBudget = estimatedBudget;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Vehicle getVehicle() {
@@ -128,14 +141,6 @@ public class Repairment {
 
     public List<RepairmentRequires> getRepairmentRequires() {
         return repairmentRequires;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public void setRepairmentRequires(List<RepairmentRequires> repairmentRequires) {
