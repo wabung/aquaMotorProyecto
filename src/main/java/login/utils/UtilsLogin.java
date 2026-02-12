@@ -2,15 +2,16 @@ package login.utils;
 
 import database.crud.CrudUser;
 import database.model.User;
+import database.service.DealershipService;
 import javafx.event.ActionEvent;
 import utilsProject.UtilsProject;
 
 public class UtilsLogin {
 
-    private static CrudUser daoMaster = new CrudUser();
+    private static DealershipService service = new DealershipService();
 
     public static void login(String email, String password, ActionEvent event) {
-        User user = daoMaster.findByCredentials(email, password);
+        User user = service.user.findByCredentials(email, password);
         if (user == null) {
             UtilsProject.mostrarError("Error de Autenticación", "El email o la contraseña no coinciden.");
         } else {
