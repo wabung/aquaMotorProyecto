@@ -10,6 +10,8 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import login.utils.UtilsLogin;
 import mechanic.controller.MechanicDashboardController;
+import mechanic.controller.WorkInProgressController;
+import mechanic.controller.WorkdayController;
 
 import java.io.IOException;
 
@@ -28,10 +30,14 @@ public class UtilsProject {
             FXMLLoader loader = new FXMLLoader(UtilsLogin.class.getResource(fxmlPath));
             Parent root = loader.load();
 
-            // --- LLAMADA 2: Inyección de datos al controlador de destino ---
             Object controller = loader.getController();
+
             if (controller instanceof MechanicDashboardController) {
                 ((MechanicDashboardController) controller).initData(user);
+            } else if (controller instanceof WorkdayController) {
+                ((WorkdayController) controller).initData(user);
+            } else if (controller instanceof WorkInProgressController) {
+                ((WorkInProgressController) controller).initData(user, null);
             }
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

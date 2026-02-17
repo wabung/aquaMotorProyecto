@@ -4,6 +4,10 @@ import database.dao.GenericDaoImpl;
 import database.model.*;
 import database.utils.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CrudMechanic extends GenericDaoImpl<Mechanic, Integer> {
 
@@ -11,75 +15,44 @@ public class CrudMechanic extends GenericDaoImpl<Mechanic, Integer> {
         super(Mechanic.class);
     }
 
-    public int getReparationsPerMonth(User user) {
-        if (user == null || user.getUserId() == 0) return 0;
-
-        String hql = "SELECT count(r) FROM Repairment r " +
-                "WHERE r.mechanic.user.userId = :userId " +
-                "AND month(r.startDate) = :targetMonth " +
-                "AND year(r.startDate) = :targetYear";
-
-        try {
-            Session session = HibernateUtil.getSession();
-
-            int month = 2;
-            int year = 2026;
-
-            Long count = (Long) session.createQuery(hql)
-                    .setParameter("userId", user.getUserId())
-                    .setParameter("targetMonth", month)
-                    .setParameter("targetYear", year)
-                    .uniqueResult();
-
-            return count != null ? count.intValue() : 0;
-
+    public List<Repairment> getMechanicWorkdayTasks(User user) {
+        if (user == null) return new ArrayList<>();
+        String hql = "FROM Repairment r JOIN FETCH r.vehicle JOIN FETCH r.mechanic m JOIN FETCH m.user WHERE m.user.userId = :uid";
+        try (Session session = HibernateUtil.getSession()) {
+            Query<Repairment> query = session.createQuery(hql, Repairment.class);
+            query.setParameter("uid", user.getUserId());
+            return query.list();
         } catch (Exception e) {
             e.printStackTrace();
-            return 0;
+            return new ArrayList<>();
         }
     }
 
-    public boolean isActive(User user) {
-        if (user == null || user.getUserId() == 0) return false;
-
-        String hql = "SELECT count(r) FROM Repairment r " +
-                "WHERE r.mechanic.user.userId = :userId " +
-                "AND r.endDate IS NULL";
-
-        try {
-            Session session = HibernateUtil.getSession();
-
-            Long count = (Long) session.createQuery(hql)
-                    .setParameter("userId", user.getUserId())
-                    .uniqueResult();
-
-            return count != null && count > 0;
-
+    public int getReparationsPerMonth(User user) {
+        if (user == null || user.getUserId() == 0) return 0;
+        String hql = "SELECT count(r) FROM Repairment r WHERE r.mechanic.user.userId = :userId AND month(r.startDate) = 2 AND year(r.startDate) = 2026";
+        try (Session session = HibernateUtil.getSession()) {
+            Query<Long> query = session.createQuery(hql, Long.class);
+            query.setParameter("userId", user.getUserId());
+            return query.uniqueResult().intValue();
         } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+            return 0;
         }
     }
 
     public int getTotalPendingAssignments(User user) {
         if (user == null || user.getUserId() == 0) return 0;
-
-        String hql = "SELECT count(r) FROM Repairment r " +
-                "WHERE r.mechanic.user.userId = :userId " +
-                "AND r.endDate IS NULL";
-
-        try {
-            Session session = HibernateUtil.getSession();
-
-            Long count = (Long) session.createQuery(hql)
-                    .setParameter("userId", user.getUserId())
-                    .uniqueResult();
-
-            return count != null ? count.intValue() : 0;
-
+        String hql = "SELECT count(r) FROM Repairment r WHERE r.mechanic.user.userId = :userId AND r.endDate IS NULL";
+        try (Session session = HibernateUtil.getSession()) {
+            Query<Long> query = session.createQuery(hql, Long.class);
+            query.setParameter("userId", user.getUserId());
+            return query.uniqueResult().intValue();
         } catch (Exception e) {
-            e.printStackTrace();
             return 0;
         }
+    }
+
+    public boolean isActive(User currentUser) {
+        return getTotalPendingAssignments(currentUser) > 0;
     }
 }

@@ -14,16 +14,20 @@
 
 <AnchorPane fx:id="rootPane" prefHeight="683.0" prefWidth="960.0" styleClass="root"
             stylesheets="@../styles/myWorkday.css"
-            xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="mechanic.controller.WorkdayController">
     <children>
         <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
               AnchorPane.topAnchor="0.0">
             <children>
+
                 <fx:include fx:id="appBar" source="../components/AppBar.fxml"/>
+
                 <BorderPane VBox.vgrow="ALWAYS">
                     <center>
-                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="hidden-scroll">
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="hidden-scroll"
+                                    style="-fx-background-color: transparent;">
                             <content>
                                 <VBox fx:id="tasksContainer" spacing="20.0" style="-fx-background-color: transparent;">
                                     <padding>
@@ -55,12 +59,12 @@
                                                        GridPane.rowIndex="1"/>
                                                 <Label styleClass="stats-label-title" text="FINISHED"
                                                        GridPane.rowIndex="2"/>
-                                                <Label fx:id="assigned" styleClass="stats-label-value" text="5"
+                                                <Label fx:id="assigned" styleClass="stats-label-value" text="0"
                                                        GridPane.columnIndex="1" GridPane.halignment="RIGHT"/>
-                                                <Label fx:id="inProgress" styleClass="stats-label-value" text="4"
+                                                <Label fx:id="inProgress" styleClass="stats-label-value" text="0"
                                                        GridPane.columnIndex="1" GridPane.halignment="RIGHT"
                                                        GridPane.rowIndex="1"/>
-                                                <Label fx:id="finished" styleClass="stats-label-value" text="1"
+                                                <Label fx:id="finished" styleClass="stats-label-value" text="0"
                                                        GridPane.columnIndex="1" GridPane.halignment="RIGHT"
                                                        GridPane.rowIndex="2"/>
                                             </children>

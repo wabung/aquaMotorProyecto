@@ -19,7 +19,7 @@
         <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
               AnchorPane.topAnchor="0.0">
             <children>
-                <fx:include source="../components/AppBar.fxml"/>
+                <fx:include fx:id="appBar" source="../components/AppBar.fxml"/>
                 <HBox alignment="CENTER" prefHeight="422.0" prefWidth="960.0" spacing="50.0" VBox.vgrow="ALWAYS">
                     <children>
                         <GridPane maxWidth="500.0" HBox.hgrow="ALWAYS">
@@ -36,19 +36,19 @@
                             </rowConstraints>
                             <children>
                                 <Label styleClass="label-title" text="VEHICLE:"/>
-                                <Label id="vehicle_model" styleClass="label-value" text="Model"
+                                <Label fx:id="lblVehicleModel" id="vehicle_model" styleClass="label-value" text="Model"
                                        GridPane.columnIndex="1"/>
                                 <Label styleClass="label-title" text="TASK TYPE:" GridPane.rowIndex="1"/>
-                                <Label id="task_type" styleClass="label-value" text="Type" GridPane.columnIndex="1"
+                                <Label fx:id="lblTaskType" id="task_type" styleClass="label-value" text="Type" GridPane.columnIndex="1"
                                        GridPane.rowIndex="1"/>
                                 <Label styleClass="label-title" text="TASK NAME:" GridPane.rowIndex="2"/>
-                                <Label id="task_name" styleClass="label-value" text="Description"
+                                <Label fx:id="lblTaskName" id="task_name" styleClass="label-value" text="Description"
                                        GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                                 <Label styleClass="label-title" text="WORKSHOP:" GridPane.rowIndex="3"/>
-                                <Label id="workshop_number" styleClass="label-value" text="Workshop Number"
+                                <Label fx:id="lblWorkshop" id="workshop_number" styleClass="label-value" text="Workshop Number"
                                        GridPane.columnIndex="1" GridPane.rowIndex="3"/>
                                 <Label styleClass="label-title" text="ESTIMATED TIME:" GridPane.rowIndex="4"/>
-                                <Label id="estimated_time" styleClass="label-value" text="Time" GridPane.columnIndex="1"
+                                <Label fx:id="lblEstimatedTime" id="estimated_time" styleClass="label-value" text="Time" GridPane.columnIndex="1"
                                        GridPane.rowIndex="4"/>
                             </children>
                         </GridPane>
@@ -62,7 +62,7 @@
                                 </Label>
                                 <ScrollPane fitToWidth="true" styleClass="custom-scroll" VBox.vgrow="ALWAYS">
                                     <content>
-                                        <GridPane vgap="15">
+                                        <GridPane fx:id="piecesGrid" vgap="15">
                                             <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" percentWidth="65.0"/>
                                                 <ColumnConstraints hgrow="SOMETIMES" percentWidth="35.0"/>
@@ -101,7 +101,7 @@
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="150.0">
                     <children>
-                        <Button id="button" mnemonicParsing="false" prefHeight="65.0" prefWidth="480.0"
+                        <Button fx:id="btnFinishTask" id="button" mnemonicParsing="false" prefHeight="65.0" prefWidth="480.0"
                                 text="FINISH TASK">
                             <font>
                                 <Font name="System Bold" size="24.0"/>

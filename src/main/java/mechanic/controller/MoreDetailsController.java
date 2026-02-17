@@ -1,5 +1,7 @@
 package mechanic.controller;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -33,9 +35,12 @@ public class MoreDetailsController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         if (appBarController != null) {
             appBarController.setTitle("TASK DETAILS");
-            appBarController.setOnBackButtonAction(() -> {
-                System.out.println("Volviendo a la lista de tareas...");
-                // Aquí iría tu lógica para cerrar ventana o cambiar escena
+            appBarController.setBackAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    System.out.println("Volviendo a la lista de tareas...");
+                    // Aquí iría tu lógica para cerrar ventana o cambiar escena
+                }
             });
         }
     }

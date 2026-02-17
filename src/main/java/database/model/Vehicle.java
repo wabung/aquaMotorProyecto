@@ -17,7 +17,7 @@ public class Vehicle {
     @Column(name = "registration", unique = true, nullable = false, length = 50)
     private String registration;
 
-    @Column(name = "model", nullable = false, length = 10)
+    @Column(name = "model", nullable = false, length = 100)
     private String model;
 
     @Column(name = "type", nullable = false)
