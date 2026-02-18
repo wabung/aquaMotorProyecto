@@ -1,9 +1,9 @@
 package login.utils;
 
-import database.crud.CrudUser;
 import database.model.User;
 import database.service.DealershipService;
 import javafx.event.ActionEvent;
+import utilsProject.HashUtils;
 import utilsProject.UtilsProject;
 
 public class UtilsLogin {
@@ -11,9 +11,10 @@ public class UtilsLogin {
     private static DealershipService service = new DealershipService();
 
     public static void login(String email, String password, ActionEvent event) {
-        User user = service.user.findByCredentials(email, password);
-        if (user == null) {
-            UtilsProject.mostrarError("Error de Autenticación", "El email o la contraseña no coinciden.");
+        User user = service.user.findByEmail(email);
+
+        if (user == null || !HashUtils.verificarPassword(password, user.getPassword())) {
+            UtilsProject.mostrarError("Authentication Error", "The email or password is incorrect.");
         } else {
             cargarDashboard(user, event);
         }
@@ -27,7 +28,7 @@ public class UtilsLogin {
         } else if (user.getSalesPerson() != null) {
             // UtilsProject.openScreen("/views/SalesView.fxml", "Ventas");
         } else {
-            UtilsProject.mostrarError("Sin Rol", "Usuario registrado pero sin permisos asignados.");
+            UtilsProject.mostrarError("No Role Assigned", "User registered but without assigned permissions.");
         }
     }
 }

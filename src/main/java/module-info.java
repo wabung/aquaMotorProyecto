@@ -7,6 +7,7 @@ module aquaMotorProyecto {
     requires org.hibernate.orm.core;
     requires java.naming;
     requires java.sql;
+    requires jbcrypt;
 
     opens mechanic.controller to javafx.fxml;
     opens login.controller to javafx.fxml;
