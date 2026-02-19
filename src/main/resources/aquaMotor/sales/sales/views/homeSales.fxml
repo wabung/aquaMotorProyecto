@@ -9,21 +9,33 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="683.0" prefWidth="960.0" stylesheets="@../../styles/homeSales.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="683.0" prefWidth="960.0" stylesheets="@../../styles/homeSales.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aquaMotor.aquaMotorProyecto.HomeSalesController">
    <children>
-      <VBox layoutX="21.0" layoutY="14.0" prefHeight="150.0" prefWidth="960.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.600000000000023">
+      <!-- Título con anchors para que se ajuste al ancho -->
+      <VBox AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0">
          <children>
-            <fx:include source="../../elements/titleCard.fxml" />
+            <fx:include fx:id="titleCard" source="../../elements/titleCard.fxml" />
          </children>
       </VBox>
-      <HBox layoutX="65.0" layoutY="181.0" prefHeight="126.0" prefWidth="858.0" spacing="60.0">
+      
+      <!-- Tarjetas de información con anchors -->
+      <HBox spacing="60.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="181.0">
          <children>
-            <fx:include source="../../elements/informationCard.fxml" />
-            <fx:include source="../../elements/informationCard.fxml" />
-            <fx:include source="../../elements/informationCard.fxml" />
+            <fx:include fx:id="infoCard1" source="../../elements/informationCard.fxml" />
+            <fx:include fx:id="infoCard2" source="../../elements/informationCard.fxml" />
+            <fx:include fx:id="infoCard3" source="../../elements/informationCard.fxml" />
          </children>
       </HBox>
-      <GridPane layoutX="55.0" layoutY="389.0" prefHeight="285.0" prefWidth="558.0">
+      
+      <!-- Label con anchors -->
+      <Label text="PRIORITY: STOCK DATE" textFill="WHITE" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="340.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      
+      <!-- Grid de vehículos con anchors -->
+      <GridPane AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="389.0" AnchorPane.bottomAnchor="9.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -39,19 +51,16 @@
             <fx:include source="../../elements/vehicleCard.fxml" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <VBox layoutX="701.0" layoutY="354.0" prefHeight="310.0" prefWidth="300.0" spacing="20.0">
+      
+      <!-- Botones con anchors -->
+      <VBox spacing="20.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="354.0" AnchorPane.bottomAnchor="19.0">
          <children>
-            <fx:include source="../../elements/button.fxml" />
-            <fx:include source="../../elements/button.fxml" />
-            <fx:include source="../../elements/button.fxml" />
-            <fx:include source="../../elements/button.fxml" />
-            <fx:include source="../../elements/button.fxml" />
+            <fx:include fx:id="button1" source="../../elements/button.fxml" />
+            <fx:include fx:id="button2" source="../../elements/button.fxml" />
+            <fx:include fx:id="button3" source="../../elements/button.fxml" />
+            <fx:include fx:id="button4" source="../../elements/button.fxml" />
+            <fx:include fx:id="button5" source="../../elements/button.fxml" />
          </children>
       </VBox>
-      <Label layoutX="55.0" layoutY="340.0" text="PRIORITY: STOCK DATE" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

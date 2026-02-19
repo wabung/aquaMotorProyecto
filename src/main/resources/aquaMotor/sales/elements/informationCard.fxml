@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="Card" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="126.0" prefWidth="250.0" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane id="Card" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="126.0" prefWidth="250.0" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aquaMotor.aquaMotorProyecto.InformationCardController">
     <top>
         <Pane prefHeight="50.0" prefWidth="250.0" BorderPane.alignment="CENTER">
             <children>
-                <Label id="title" layoutX="14.0" layoutY="14.0" prefWidth="220.0" text="TITULO">
+                <Label id="title" fx:id="title" layoutX="14.0" layoutY="14.0" prefWidth="220.0" text="TITULO">
                     <font>
                         <Font name="System Bold" size="13.0" />
                     </font>
@@ -20,7 +20,7 @@
     <center>
         <Pane prefHeight="76.0" prefWidth="250.0" BorderPane.alignment="CENTER">
             <children>
-                <Label id="result" layoutX="14.0" layoutY="0.0" prefWidth="220.0" text="CANTIDAD">
+                <Label id="result" fx:id="result" layoutX="14.0" layoutY="0.0" prefWidth="220.0" text="CANTIDAD">
                     <font>
                         <Font name="System Bold" size="22.0" />
                     </font>

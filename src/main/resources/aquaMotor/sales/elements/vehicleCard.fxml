@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane minHeight="140.0" prefHeight="100.0" prefWidth="284.0" styleClass="vehicle-card" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane minHeight="140.0" prefHeight="100.0" prefWidth="284.0" styleClass="vehicle-card" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aquaMotor.aquaMotorProyecto.VehicleCardController">
 
     <stylesheets>
         <URL value="@vehiclecard.css" />

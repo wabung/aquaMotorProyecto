@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox fx:id="userCard" alignment="CENTER_LEFT" spacing="20" styleClass="user-card" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
-
-    <!-- Imagen del usuario -->
-    <ImageView fitHeight="100" fitWidth="100">
-        <image>
-            <Image url="@boss/images/user.png" />
-        </image>
-    </ImageView>
+<HBox fx:id="userCard" alignment="CENTER_LEFT" spacing="20" styleClass="user-card" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aquaMotor.aquaMotorProyecto.UserCardController">
 
     <!-- Datos del usuario -->
     <VBox alignment="CENTER_LEFT" spacing="6" styleClass="user-data">

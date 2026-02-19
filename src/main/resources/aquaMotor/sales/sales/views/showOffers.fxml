@@ -3,25 +3,27 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="683.0" prefWidth="960.0" stylesheets="@../../styles/showOffers.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="683.0" prefWidth="960.0" stylesheets="@../../styles/showOffers.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aquaMotor.aquaMotorProyecto.ShowOffersController">
 
     <children>
-        <AnchorPane layoutX="95.0" layoutY="74.0" prefHeight="140.0" prefWidth="960.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <!-- AppBar con anchors -->
+        <AnchorPane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <fx:include source="../../elements/appBar.fxml" />
+                <fx:include fx:id="appBar" source="../../elements/appBar.fxml" />
             </children>
         </AnchorPane>
 
-        <!-- Filtro STATUS + barra búsqueda -->
-        <HBox layoutX="47.0" layoutY="168.0" prefHeight="45.0" prefWidth="866.0" spacing="100.0">
+        <!-- Filtro STATUS + barra búsqueda con anchors -->
+        <HBox spacing="100.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="168.0">
             <children>
-                <ComboBox prefHeight="40.0" prefWidth="234.0" promptText="STATUS" styleClass="status-combo" />
-                <TextField prefHeight="40.0" prefWidth="534.0" styleClass="search-field" text="SEARCH">
+                <ComboBox fx:id="cboStatus" prefHeight="40.0" prefWidth="234.0" promptText="STATUS" styleClass="status-combo" />
+                <TextField fx:id="txtSearch" prefHeight="40.0" promptText="SEARCH" styleClass="search-field" HBox.hgrow="ALWAYS">
                <opaqueInsets>
                   <Insets left="20.0" />
                </opaqueInsets>
@@ -31,45 +33,11 @@
             </children>
         </HBox>
 
-        <!-- Lista de cards con botón STATUS verde y borde en cada fila -->
-        <VBox layoutX="126.0" layoutY="214.0" prefHeight="494.0" prefWidth="734.0" spacing="10.0">
-            <children>
-                <HBox prefHeight="140.0" prefWidth="719.0" spacing="10.0" styleClass="status-row">
-                    <children>
-                        <fx:include source="../../elements/vehicleCard.fxml" />
-                        <fx:include source="../../elements/userCard.fxml" />
-                        <Button mnemonicParsing="false" styleClass="status-button" text="STATUS">
-                            <HBox.margin>
-                                <Insets left="20.0" top="110.0" />
-                            </HBox.margin>
-                        </Button>
-                    </children>
-                </HBox>
-
-                <HBox prefHeight="158.0" prefWidth="726.0" spacing="10.0" styleClass="status-row">
-                    <children>
-                        <fx:include source="../../elements/vehicleCard.fxml" />
-                        <fx:include source="../../elements/userCard.fxml" />
-                        <Button mnemonicParsing="false" styleClass="status-button" text="STATUS">
-                            <HBox.margin>
-                                <Insets left="20.0" top="110.0" />
-                            </HBox.margin>
-                        </Button>
-                    </children>
-                </HBox>
-
-                <HBox prefHeight="140.0" prefWidth="719.0" spacing="10.0" styleClass="status-row">
-                    <children>
-                        <fx:include source="../../elements/vehicleCard.fxml" />
-                        <fx:include source="../../elements/userCard.fxml" />
-                        <Button mnemonicParsing="false" styleClass="status-button" text="STATUS">
-                            <HBox.margin>
-                                <Insets left="20.0" top="110.0" />
-                            </HBox.margin>
-                        </Button>
-                    </children>
-                </HBox>
-            </children>
-        </VBox>
+        <!-- Lista de cards centrada con anchors - Scrolleable -->
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" AnchorPane.leftAnchor="113.0" AnchorPane.rightAnchor="113.0" AnchorPane.topAnchor="230.0" AnchorPane.bottomAnchor="20.0">
+            <content>
+                <VBox fx:id="offerListContainer" spacing="10.0" />
+            </content>
+        </ScrollPane>
     </children>
 </AnchorPane>
