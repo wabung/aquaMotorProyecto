@@ -7,10 +7,9 @@
 
 <AnchorPane minHeight="140.0" prefHeight="100.0"  prefWidth="284.0" styleClass="vehicle-card" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
 
-    <stylesheets>
-        <URL value="@vehiclecard.css" />
-      <URL value="@../styles/components.css" />
-    </stylesheets>
+        <stylesheets>
+            <URL value="@../styles/components.css" />
+        </stylesheets>
 
     <children>
         <GridPane layoutX="111.0" layoutY="17.0" prefHeight="106.0" prefWidth="158.0" styleClass="vehicle-grid" AnchorPane.rightAnchor="10.0">

@@ -12,17 +12,17 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxWidth="986.0" minHeight="683.0" prefHeight="683.0" prefWidth="986.0" style="-fx-background-color: #0B1323;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxWidth="986.0" minHeight="683.0" prefHeight="683.0" prefWidth="986.0" style="-fx-background-color: #0B1323;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aquaMotor.aquaMotorProyecto.controllers.ShowRepairsController">
     <children>
 
         <VBox alignment="CENTER" prefHeight="120.0" prefWidth="986.0" style="-fx-background-color: #1E293B;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="994.0" spacing="20.0">
+                <HBox alignment="CENTER" prefHeight="150.0" prefWidth="994.0" spacing="20.0">
                     <padding>
                         <Insets left="30.0" />
                     </padding>
                     <children>
-                        <fx:include source="boss/components/appBar.fxml" />
+                        <fx:include source="boss/components/appBarMechanicBoss.fxml" />
                     </children>
                 </HBox>
             </children>

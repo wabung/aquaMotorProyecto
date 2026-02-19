@@ -1,39 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxWidth="986.0" minHeight="683.0" prefHeight="683.0" prefWidth="986.0" style="-fx-background-color: #0B1323;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minHeight="683.0" prefHeight="683.0" style="-fx-background-color: #0B1323;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aquaMotor.aquaMotorProyecto.controllers.ShowMechanicsController">
     <children>
 
-        <VBox alignment="CENTER" prefHeight="120.0" prefWidth="986.0" style="-fx-background-color: #1E293B;" AnchorPane.topAnchor="0.0">
+        <VBox alignment="CENTER" prefHeight="120.0" style="-fx-background-color: #1E293B;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <HBox alignment="CENTER_LEFT" spacing="20.0">
+                <HBox alignment="TOP_CENTER" maxWidth="Infinity" spacing="20.0">
                     <padding>
                         <Insets left="30.0" />
                     </padding>
                     <children>
-                        <fx:include source="boss/components/appBar.fxml" />
+                        <fx:include source="boss/components/appBarMechanicBoss.fxml" />
                     </children>
                 </HBox>
             </children>
         </VBox>
 
-        <HBox alignment="CENTER" layoutY="140.0" prefHeight="70.0" prefWidth="986.0">
+        <HBox alignment="CENTER" layoutY="140.0" prefHeight="70.0" style="-fx-background-color: #0B1323;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
                 <ComboBox fx:id="idFilterCombo" prefWidth="200.0" promptText="ID" style="-fx-background-color: #1E293B; -fx-border-color: #4B5563; -fx-text-fill: white;" />
             </children>
         </HBox>
 
-        <ScrollPane fitToWidth="true" layoutY="190.0" prefHeight="493.0" prefWidth="986.0" style="-fx-background-color: transparent; -fx-background: #0B1323; -fx-border-color: transparent;" AnchorPane.bottomAnchor="0.0">
+        <ScrollPane fitToWidth="true" layoutY="190.0" prefHeight="493.0" style="-fx-background-color: transparent; -fx-background: #0B1323; -fx-border-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="190.0">
             <content>
                 <TilePane fx:id="mechanicsContainer" alignment="TOP_CENTER" hgap="30.0" prefColumns="3" vgap="30.0">
                     <padding>

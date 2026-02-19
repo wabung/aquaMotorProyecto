@@ -15,7 +15,7 @@
       fx:controller="aquaMotor.aquaMotorProyecto.controllers.BossHomeController">
 
    <children>
-      <fx:include source="boss/components/appBar.fxml" />
+      <fx:include source="boss/components/appBarMechanicBoss.fxml" />
 
       <BorderPane prefHeight="684.0" prefWidth="960.0">
          <top>

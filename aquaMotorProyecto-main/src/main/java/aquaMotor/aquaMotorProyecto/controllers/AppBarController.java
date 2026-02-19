@@ -1,6 +1,7 @@
 package aquaMotor.aquaMotorProyecto.controllers;
 
 import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -17,7 +18,7 @@ public class AppBarController {
     private void handleBack() {
         try {
             // Regresar a la pantalla principal
-            aquaMotor.aquaMotorProyecto.App.setRoot("bossHome");
+            aquaMotor.aquaMotorProyecto.App.setRoot("mechanicBoss");
         } catch (IOException e) {
             e.printStackTrace();
         }

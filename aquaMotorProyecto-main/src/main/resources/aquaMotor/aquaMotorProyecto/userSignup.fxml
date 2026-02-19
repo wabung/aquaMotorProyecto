@@ -18,7 +18,7 @@
    <!-- BARRA SUPERIOR -->
    <VBox alignment="CENTER" layoutX="-33.0" prefHeight="160.0" prefWidth="992.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <children>
-         <fx:include source="boss/components/appBar.fxml" />
+         <fx:include source="boss/components/appBarGeneral.fxml" />
       </children>
       <padding>
          <Insets bottom="20.0" />

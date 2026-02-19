@@ -21,21 +21,21 @@ public class MainApp extends Application {
             return;
         }
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/aquaMotor/aquaMotorProyecto/showRepairs.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/aquaMotor/aquaMotorProyecto/loginScreen.fxml"));
         Parent root = loader.load();
 
         primaryStage.setTitle("AquaMotor - Management System");
         Scene scene = new Scene(root, 986, 683);
         primaryStage.setScene(scene);
 
-        // Registrar la scene en App para que App.setRoot(...) funcione desde
-        // cualquier controlador (se usaba App.setRoot en los handlers)
-        aquaMotor.aquaMotorProyecto.App.initScene(scene);
+        // Registrar el stage en App para que App.setRoot(...) cree una Scene
+        // completa y la aplique al Stage.
+        aquaMotor.aquaMotorProyecto.App.initStage(primaryStage);
 
         // TEST: abrir la pantalla de showMechanics para verificar que la
         // navegación mediante App.setRoot("showMechanics") funciona.
         try {
-            aquaMotor.aquaMotorProyecto.App.setRoot("showMechanics");
+            aquaMotor.aquaMotorProyecto.App.setRoot("loginScreen");
         } catch (Exception e) {
             e.printStackTrace();
         }
