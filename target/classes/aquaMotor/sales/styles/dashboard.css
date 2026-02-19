@@ -1,0 +1,9 @@
+.root {
+    /* Color de fondo igual al de los componentes para integración total */
+    -fx-background-color: #0F172A;
+}
+
+/* Selector para el AnchorPane principal (opcional si usas ID) */
+#dashboard {
+    -fx-background-color: #0F172A;
+}

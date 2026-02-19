@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="300.0" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aquaMotor.aquaMotorProyecto.ButtonController">
+   <center>
+      <Button id="btn" fx:id="btn" mnemonicParsing="false" onAction="#handleClick" prefHeight="107.0" prefWidth="300.0" styleClass="green-button" stylesheets="@../styles/components.css" text="Button" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </center>
+</BorderPane>

@@ -1,0 +1,55 @@
+/* Fondo oscuro general */
+.root {
+    -fx-background-color: #050b18;
+}
+
+/* Grid de los formularios (por si quieres ajustar separación) */
+.offer-form {
+    -fx-hgap: 10;
+    -fx-vgap: 15;
+}
+
+/* Etiquetas tipo LICENCE PLATE: */
+.form-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Campos de texto rectangulares con borde gris */
+.form-field {
+    -fx-background-color: #1E293B;      /* relleno oscuro */
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #818ea0;
+    -fx-border-color: #818ea0;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 6 8 6 8;
+}
+
+/* Borde algo más claro al tener foco */
+.form-field:focused {
+    -fx-border-color: #cbd5f5;
+}
+
+/* Botón OFER SALE similar a las cards: rectangular, gris oscuro */
+.offer-button {
+    -fx-background-color: #1E293B;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;   /* bordes redondeados suaves */
+    -fx-border-radius: 20;
+    -fx-border-color: #818ea0;
+    -fx-border-width: 1;
+}
+
+/* Efecto hover y pressed */
+.offer-button:hover {
+    -fx-background-color: #243554;
+}
+
+.offer-button:pressed {
+    -fx-background-color: #162032;
+}

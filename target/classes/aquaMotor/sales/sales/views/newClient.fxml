@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="683.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aquaMotor.aquaMotorProyecto.NewClientController">
+
+    <children>
+        <!-- AppBar con anchors -->
+        <AnchorPane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <fx:include fx:id="appBar" source="../../elements/appBar.fxml" />
+            </children>
+        </AnchorPane>
+
+        <!-- Formulario centrado con anchors -->
+        <GridPane fx:id="formGrid" styleClass="form-grid" AnchorPane.leftAnchor="311.0" AnchorPane.rightAnchor="311.0" AnchorPane.topAnchor="231.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label styleClass="form-label" text="NAME:" />
+                <Label styleClass="form-label" text="EMAIL:" GridPane.rowIndex="1" />
+                <Label styleClass="form-label" text="PHONE:" GridPane.rowIndex="2" />
+
+                <TextField fx:id="txtName" styleClass="form-field" GridPane.columnIndex="1" />
+                <TextField fx:id="txtEmail" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="txtPhone" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+
+        <!-- Botones centrados -->
+        <HBox alignment="TOP_CENTER" spacing="20.0" AnchorPane.leftAnchor="311.0" AnchorPane.rightAnchor="311.0" AnchorPane.topAnchor="414.0">
+            <children>
+                <Button fx:id="btnSave" mnemonicParsing="false" onAction="#handleSave" prefHeight="40.0" prefWidth="150.0" styleClass="btn-save" text="SAVE" />
+                <Button fx:id="btnClear" mnemonicParsing="false" onAction="#handleClear" prefHeight="40.0" prefWidth="150.0" styleClass="btn-clear" text="CLEAR" />
+            </children>
+        </HBox>
+
+        <!-- User cards con anchors - Lista scrolleable de clientes -->
+        <ScrollPane fx:id="clientScrollPane" fitToWidth="true" hbarPolicy="NEVER" prefHeight="149.0" prefWidth="773.0" styleClass="client-scroll-pane" AnchorPane.bottomAnchor="42.39999999999998" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="492.0">
+            <content>
+                <VBox fx:id="clientListContainer" spacing="10" styleClass="client-list-container" />
+            </content>
+        </ScrollPane>
+    </children>
+   <stylesheets>
+      <URL value="@../../styles/newClient.css" />
+   </stylesheets>
+</AnchorPane>

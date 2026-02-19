@@ -1,0 +1,66 @@
+/* Fondo general oscuro */
+.root {
+    -fx-background-color: #050b18;
+}
+
+/* Grid del formulario centrado, sin bordes visibles */
+.form-grid {
+    -fx-hgap: 10;
+    -fx-vgap: 15;
+}
+
+/* Etiquetas tipo “NAME:” blancas */
+.form-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Campos de texto con borde claro y fondo oscuro */
+.form-field {
+    -fx-background-color: #1E293B;   /* color de relleno */
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #8a8a8a;
+    -fx-border-color: #818ea0;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 6 8 6 8;
+}
+
+
+/* Botones base: texto blanco, sin bordes fuertes */
+.button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-border-color: #F1F5F9;
+}
+
+/* Botón SAVE (verde) */
+.btn-save {
+    -fx-background-color: #1f7c3a;
+}
+
+.btn-save:hover {
+    -fx-background-color: #269447;
+}
+
+.btn-save:pressed {
+    -fx-background-color: #17602c;
+}
+
+/* Botón CLEAR (rojo) */
+.btn-clear {
+    -fx-background-color: #c5483f;
+}
+
+.btn-clear:hover {
+    -fx-background-color: #d3564d;
+}
+
+.btn-clear:pressed {
+    -fx-background-color: #a83b34;
+}

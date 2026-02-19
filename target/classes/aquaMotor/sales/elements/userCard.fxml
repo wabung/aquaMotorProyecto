@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:id="userCard" alignment="CENTER_LEFT" spacing="20" styleClass="user-card" stylesheets="@../styles/components.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aquaMotor.aquaMotorProyecto.UserCardController">
+
+    <!-- Datos del usuario -->
+    <VBox alignment="CENTER_LEFT" spacing="6" styleClass="user-data">
+
+        <HBox spacing="10">
+            <Label styleClass="user-label-title" text="NAME:" />
+            <Label id="name" fx:id="namelabel" styleClass="user-label-value" text="NAME" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Label styleClass="user-label-title" text="EMAIL:" />
+            <Label id="email" fx:id="emaillabel" styleClass="user-label-value" text="EMAIL" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Label prefWidth="90.0" styleClass="user-label-title" text="PHONENUMBER:" />
+            <Label id="phone" fx:id="phonelabel" styleClass="user-label-value" text="NUMBER" />
+        </HBox>
+
+    </VBox>
+
+</HBox>
