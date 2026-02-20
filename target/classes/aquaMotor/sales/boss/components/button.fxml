@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="60.0" prefWidth="280.0"
+            stylesheets="@../styles/components.css"
+            xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="aquaMotor.aquaMotorProyecto.ButtonController">
+    <center>
+        <Button fx:id="btn" mnemonicParsing="false"
+                prefHeight="46.0" prefWidth="240.0"
+                text="USER SIGNUP"
+                onAction="#handleClick"
+                BorderPane.alignment="CENTER">
+            <font><Font name="System Bold" size="16.0" /></font>
+        </Button>
+    </center>
+</BorderPane>

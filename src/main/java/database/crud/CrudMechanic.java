@@ -1,110 +1,58 @@
 package database.crud;
 
-import database.dao.DaoMechanic;
-import org.hibernate.Transaction;
-import database.model.Mechanic;
+import database.dao.GenericDaoImpl;
+import database.model.*;
+import database.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
-import database.utils.HibernateUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CrudMechanic implements DaoMechanic {
+public class CrudMechanic extends GenericDaoImpl<Mechanic, Integer> {
 
-    @Override
-    public void create(Mechanic u) {
-        Session session = HibernateUtil.getSession();
-        Transaction tx = null;
-        try {
-            tx = session.beginTransaction();
-            session.save(u);
-            tx.commit();
-            System.out.println("Mechanic created with id: " + u.getMechanicId());
+    public CrudMechanic() {
+        super(Mechanic.class);
+    }
+
+    public List<Repairment> getMechanicWorkdayTasks(User user) {
+        if (user == null) return new ArrayList<>();
+        String hql = "FROM Repairment r JOIN FETCH r.vehicle JOIN FETCH r.mechanic m JOIN FETCH m.user WHERE m.user.userId = :uid";
+        try (Session session = HibernateUtil.getSession()) {
+            Query<Repairment> query = session.createQuery(hql, Repairment.class);
+            query.setParameter("uid", user.getUserId());
+            return query.list();
         } catch (Exception e) {
-            if (tx != null) tx.rollback();
-            System.err.println("Fatal Error creating the Mechanic");
             e.printStackTrace();
-        } finally {
-            session.close();
+            return new ArrayList<>();
         }
     }
 
-    @Override
-    public Mechanic readById(int id) {
-        Session session = HibernateUtil.getSession();
-        Mechanic u = null;
-        try {
-            u = session.get(Mechanic.class, id);
-
-            if (u == null) {
-                System.err.println("The Mechanic with that id, doesn't exist in the data base ");
-            }
+    public int getReparationsPerMonth(User user) {
+        if (user == null || user.getUserId() == 0) return 0;
+        String hql = "SELECT count(r) FROM Repairment r WHERE r.mechanic.user.userId = :userId AND month(r.startDate) = 2 AND year(r.startDate) = 2026";
+        try (Session session = HibernateUtil.getSession()) {
+            Query<Long> query = session.createQuery(hql, Long.class);
+            query.setParameter("userId", user.getUserId());
+            return query.uniqueResult().intValue();
         } catch (Exception e) {
-            throw new RuntimeException(e);
-        } finally {
-            session.close();
-        }
-
-        return u;
-    }
-
-    @Override
-    public List<Mechanic> read() {
-        Session session = HibernateUtil.getSession();
-        List<Mechanic> lista = null;
-
-        try {
-            String hql = "FROM Mechanic";
-            Query<Mechanic> query = session.createQuery(hql, Mechanic.class);
-            lista = query.list();
-        } catch (Exception e) {
-            System.err.println("Fatal error creating the query");
-            e.printStackTrace();
-
-        } finally {
-            session.close();
-        }
-        return lista;
-    }
-
-    @Override
-    public void update(Mechanic u) {
-        Session session = HibernateUtil.getSession();
-        Transaction tx = null;
-
-        try {
-            tx = session.beginTransaction();
-            session.update(u);
-            tx.commit();
-            System.out.println("Mechanic updated correctly");
-        } catch (Exception e) {
-            System.err.println("Fatal error updating the Mechanic");
-            e.printStackTrace();
-        } finally {
-            session.close();
+            return 0;
         }
     }
 
-    @Override
-    public void delete(int id) {
-        Session session = HibernateUtil.getSession();
-        Transaction tx = null;
-
-        try {
-            tx = session.beginTransaction();
-            Mechanic u = readById(id);
-            if (u != null) {
-                session.delete(readById(id));
-                tx.commit();
-                System.out.println("Mechanic deleted correctly");
-            } else {
-                System.err.println("The Mechanic with that id, doesn't exist in the data base ");
-            }
+    public int getTotalPendingAssignments(User user) {
+        if (user == null || user.getUserId() == 0) return 0;
+        String hql = "SELECT count(r) FROM Repairment r WHERE r.mechanic.user.userId = :userId AND r.endDate IS NULL";
+        try (Session session = HibernateUtil.getSession()) {
+            Query<Long> query = session.createQuery(hql, Long.class);
+            query.setParameter("userId", user.getUserId());
+            return query.uniqueResult().intValue();
         } catch (Exception e) {
-            System.err.println("Fatal error deleting the Mechanic");
-            e.printStackTrace();
-        } finally {
-            session.close();
+            return 0;
         }
+    }
+
+    public boolean isActive(User currentUser) {
+        return getTotalPendingAssignments(currentUser) > 0;
     }
 }

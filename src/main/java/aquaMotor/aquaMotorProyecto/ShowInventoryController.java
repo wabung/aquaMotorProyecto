@@ -101,7 +101,7 @@ public class ShowInventoryController implements Initializable {
     private void cargarVehiculos() {
         try {
             // Obtener todos los vehículos de la base de datos
-            todosLosVehiculos = crudVehicle.read();
+            todosLosVehiculos = crudVehicle.readAll();
             
             if (todosLosVehiculos == null) {
                 todosLosVehiculos = new ArrayList<>();

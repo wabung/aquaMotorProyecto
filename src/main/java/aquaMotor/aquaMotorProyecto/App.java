@@ -2,6 +2,7 @@ package aquaMotor.aquaMotorProyecto;
 
 import database.model.User;
 import javafx.application.Application;
+import utils.InitializableWithUser;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -31,17 +32,15 @@ public class App extends Application {
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
+    public static void setRoot(String fxml) throws IOException {
         System.out.println("setRoot llamado con: " + fxml);
         FXMLLoader loader = new FXMLLoader(App.class.getResource("/aquaMotor/sales/" + fxml + ".fxml"));
         Parent newRoot = loader.load();
         
-        // Si estamos cargando homeSales y hay un usuario en sesión, pasarle los datos
-        if (fxml.contains("homeSales") && currentUser != null) {
-            Object controller = loader.getController();
-            if (controller instanceof HomeSalesController) {
-                ((HomeSalesController) controller).initData(currentUser);
-            }
+        // Si el controlador implementa InitializableWithUser, pasarle el usuario en sesión
+        Object controller = loader.getController();
+        if (controller instanceof InitializableWithUser && currentUser != null) {
+            ((InitializableWithUser) controller).initData(currentUser);
         }
         
         // Crear una nueva Scene y establecerla en el Stage

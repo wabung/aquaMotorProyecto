@@ -6,26 +6,42 @@ import javafx.event.ActionEvent;
 
 public class UtilsLogin {
 
-    private static CrudUser daoMaster = new CrudUser();
+    private static CrudUser crudUser = new CrudUser();
 
     public static void login(String email, String password, ActionEvent event) {
-        User user = daoMaster.findByCredentials(email, password);
+        System.out.println("Intentando login con email: " + email);
+        User user = crudUser.findByEmail(email);
+
         if (user == null) {
-            UtilsProject.mostrarError("Error de Autenticación", "El email o la contraseña no coinciden.");
+            System.out.println("Usuario no encontrado");
+            UtilsProject.mostrarError("Authentication Error", "The email or password is incorrect.");
+        } else if (!HashUtils.verificarPassword(password, user.getPassword())) {
+            System.out.println("Contraseña incorrecta");
+            UtilsProject.mostrarError("Authentication Error", "The email or password is incorrect.");
         } else {
+            System.out.println("Login exitoso para: " + user.getName());
             cargarDashboard(user, event);
         }
     }
 
     private static void cargarDashboard(User user, ActionEvent event) {
+        System.out.println("Cargando dashboard...");
+        System.out.println("Boss: " + user.getBoss());
+        System.out.println("Mechanic: " + user.getMechanic());
+        System.out.println("SalesPerson: " + user.getSalesPerson());
+        
         if (user.getBoss() != null) {
-            //UtilsProject.openScreen("/views/BossDashboard.fxml", "Panel de Control - Jefe");
+            System.out.println("Usuario es Boss");
+            UtilsProject.openScreen(event, "/aquaMotor/sales/boss/views/bossHome.fxml", "BOSS HOME", user);
         } else if (user.getMechanic() != null) {
-            UtilsProject.openScreen(event, "/aquaMotor/mechanic/views/MechanicDashboard.fxml", "Workshop - Mechanic", user);
+            System.out.println("Usuario es Mechanic");
+            UtilsProject.openScreen(event, "/aquaMotor/sales/mechanic/views/MechanicDashboard.fxml", "Workshop - Mechanic", user);
         } else if (user.getSalesPerson() != null) {
-            UtilsProject.openScreen(event, "/aquaMotor/sales/sales/views/homeSales.fxml", "Ventas", user);
+            System.out.println("Usuario es SalesPerson - Navegando a Sales");
+            UtilsProject.openScreen(event, "/aquaMotor/sales/sales/views/homeSales.fxml", "AquaMotor - Sales", user);
         } else {
-            UtilsProject.mostrarError("Sin Rol", "Usuario registrado pero sin permisos asignados.");
+            System.out.println("Usuario sin rol asignado");
+            UtilsProject.mostrarError("No Role Assigned", "User registered but without assigned permissions.");
         }
     }
 }

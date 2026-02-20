@@ -29,4 +29,9 @@ public class TitleCardController implements Initializable {
     public String getTitle() {
         return titleAppBar != null ? titleAppBar.getText() : "";
     }
+
+    /** Overload that also accepts an image path (path is currently ignored) */
+    public void setTitle(String title, String imagePath) {
+        setTitle(title);
+    }
 }

@@ -38,4 +38,10 @@ public class InformationCardController implements Initializable {
     public String getResult() {
         return result != null ? result.getText() : "";
     }
+
+    /** Convenience method to set both title and result at once */
+    public void setData(String titleText, String resultText) {
+        setTitle(titleText);
+        setResult(resultText);
+    }
 }

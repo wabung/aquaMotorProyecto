@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="rootPane" prefHeight="683.0" prefWidth="960.0" style="-fx-background-color: #0B1323;"
+      xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="aquaMotor.aquaMotorProyecto.controllers.BossHomeController">
+
+   <children>
+      <fx:include fx:id="appBarMechanicBoss" source="../components/appBarMechanicBoss.fxml" />
+
+      <BorderPane prefHeight="684.0" prefWidth="960.0">
+         <top>
+            <VBox alignment="CENTER" prefHeight="120.0" prefWidth="960.0" spacing="20" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+               <children>
+                  <HBox alignment="CENTER" spacing="40">
+                     <children>
+                        <fx:include source="../components/stockCard.fxml" />
+                        <fx:include source="../components/salesCard.fxml" />
+                        <fx:include source="../components/proposalCard.fxml" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+
+         <left>
+            <VBox alignment="TOP_CENTER" prefHeight="372.0" prefWidth="550.0" spacing="10" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets left="30.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label text="SALES DEPARTMENT STATS" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+
+                  <BarChart fx:id="salesChart" legendVisible="false" maxHeight="314.0" maxWidth="380.0" prefHeight="314.0" prefWidth="380.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" tickLabelFill="WHITE" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" tickLabelFill="WHITE" />
+                     </yAxis>
+                  </BarChart>
+               </children>
+            </VBox>
+         </left>
+
+         <right>
+            <VBox alignment="TOP_CENTER" prefHeight="447.0" prefWidth="307.0" spacing="10" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets right="30.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label prefWidth="280.0" style="-fx-font-weight: bold;" text="STOCK STATE" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+
+                  <VBox prefHeight="182.0" prefWidth="280.0" spacing="10" style="-fx-background-color: transparent; -fx-padding: 16; -fx-border-color: #4B5563; -fx-border-width: 2; -fx-border-radius: 5;">
+                     <children>
+                        <VBox spacing="8">
+                           <children>
+                              <Label fx:id="newCarsLabel" style="-fx-font-weight: bold;" text="NEW CARS: 1" textFill="WHITE" />
+                              <Label fx:id="usedCarsLabel" style="-fx-font-weight: bold;" text="USED CARS: 1" textFill="WHITE" />
+                              <Label fx:id="motorbikesLabel" style="-fx-font-weight: bold;" text="MOTORBIKES: 1" textFill="WHITE" />
+                              <Label fx:id="mopedLabel" style="-fx-font-weight: bold;" text="MOPED: 1" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </right>
+
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <fx:include fx:id="navButton" source="../components/button.fxml" />
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</VBox>

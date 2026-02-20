@@ -8,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -70,13 +69,10 @@ public class ShowOffersController implements Initializable {
     private void configurarComboBox() {
         if (cboStatus != null) {
             cboStatus.getItems().addAll(
-                "All Status",
-                "Pending",
-                "Accepted",
-                "Rejected",
+                "Active",
                 "Expired"
             );
-            cboStatus.setValue("All Status");
+            cboStatus.setValue("Active");
             cboStatus.setOnAction(event -> aplicarFiltrosYBusqueda());
         }
     }
@@ -94,7 +90,7 @@ public class ShowOffersController implements Initializable {
      */
     private void cargarOfertas() {
         try {
-            todasLasOfertas = crudOffer.read();
+            todasLasOfertas = crudOffer.readAll();
             if (todasLasOfertas == null) {
                 todasLasOfertas = new ArrayList<>();
             }
@@ -213,14 +209,13 @@ public class ShowOffersController implements Initializable {
      * Aplica filtros de estado y búsqueda
      */
     private void aplicarFiltrosYBusqueda() {
-        String estadoSeleccionado = cboStatus != null ? cboStatus.getValue() : "All Status";
+        String estadoSeleccionado = cboStatus != null ? cboStatus.getValue() : "Active";
         String textoBusqueda = txtSearch != null ? txtSearch.getText().trim().toLowerCase() : "";
 
         ofertasFiltradas = todasLasOfertas.stream()
             .filter(o -> {
                 // Filtro por estado
-                boolean cumpleEstado = estadoSeleccionado == null || 
-                                      estadoSeleccionado.equals("All Status") ||
+                boolean cumpleEstado = estadoSeleccionado == null ||
                                       determinarEstado(o).equalsIgnoreCase(estadoSeleccionado);
 
                 // Filtro por búsqueda (busca en cliente, vehículo, etc.)

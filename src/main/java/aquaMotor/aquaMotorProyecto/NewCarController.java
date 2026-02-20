@@ -89,7 +89,7 @@ public class NewCarController implements Initializable {
      */
     private void cargarVehiculos() {
         try {
-            vehiculos = crudVehicle.read();
+            vehiculos = crudVehicle.readAll();
             if (vehiculos == null) {
                 vehiculos = new ArrayList<>();
             }

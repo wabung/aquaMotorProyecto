@@ -87,7 +87,7 @@ public class OfferSaleController implements Initializable {
      */
     private void cargarVehiculos() {
         try {
-            vehiculos = crudVehicle.read();
+            vehiculos = crudVehicle.readAll();
             if (vehiculos == null) {
                 vehiculos = new ArrayList<>();
             }
@@ -153,7 +153,7 @@ public class OfferSaleController implements Initializable {
      */
     private void cargarClientes() {
         try {
-            clientes = crudClients.read();
+            clientes = crudClients.readAll();
             if (clientes == null) {
                 clientes = new ArrayList<>();
             }

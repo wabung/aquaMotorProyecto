@@ -85,7 +85,7 @@ public class NewClientController implements Initializable {
         
         try {
             // Obtener todos los clientes de la base de datos
-            List<Client> clientes = crudClients.read();
+            List<Client> clientes = crudClients.readAll();
             
             if (clientes == null || clientes.isEmpty()) {
                 System.out.println("No hay clientes en la base de datos");

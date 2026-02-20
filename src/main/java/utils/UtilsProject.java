@@ -1,6 +1,5 @@
 package utils;
 
-import aquaMotor.aquaMotorProyecto.HomeSalesController;
 import database.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -9,8 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import utils.UtilsLogin;
-
 
 import java.io.IOException;
 
@@ -26,15 +23,16 @@ public class UtilsProject {
 
     public static void openScreen(ActionEvent event, String fxmlPath, String titulo, User user) {
         try {
-            FXMLLoader loader = new FXMLLoader(UtilsLogin.class.getResource(fxmlPath));
+            System.out.println("Intentando abrir pantalla: " + fxmlPath);
+            FXMLLoader loader = new FXMLLoader(UtilsProject.class.getResource(fxmlPath));
             Parent root = loader.load();
+            System.out.println("FXML cargado exitosamente");
 
-            // --- LLAMADA 2: Inyección de datos al controlador de destino ---
             Object controller = loader.getController();
-            if (controller instanceof HomeSalesController) {
-                ((HomeSalesController) controller).initData(user);
-                // Guardar el usuario en App para mantener la sesión
-                aquaMotor.aquaMotorProyecto.App.setCurrentUser(user);
+            System.out.println("Controlador: " + (controller != null ? controller.getClass().getName() : "null"));
+
+            if (controller instanceof InitializableWithUser) {
+                ((InitializableWithUser) controller).initData(user);
             }
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -42,6 +40,7 @@ public class UtilsProject {
             stage.setTitle(titulo);
             stage.centerOnScreen();
             stage.show();
+            System.out.println("Pantalla mostrada exitosamente");
 
         } catch (IOException e) {
             mostrarError("Error de Carga", "No se pudo abrir la ventana: " + e.getMessage());

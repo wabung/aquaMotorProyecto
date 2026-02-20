@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="aquaMotor.aquaMotorProyecto.ListCardController"
+      alignment="CENTER_LEFT" spacing="15.0"
+      style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 8; -fx-background-radius: 8;">
+    <padding>
+        <Insets bottom="15.0" left="20.0" right="20.0" top="15.0"/>
+    </padding>
+    <children>
+        <Label fx:id="lblId" style="-fx-font-weight: bold; -fx-font-size: 14; -fx-text-fill: #666;" minWidth="50.0"/>
+        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+            <children>
+                <Label fx:id="lblVehicle" style="-fx-font-weight: bold; -fx-font-size: 14;"/>
+                <Label fx:id="lblDescription" style="-fx-font-size: 12; -fx-text-fill: #888;" wrapText="true"/>
+            </children>
+        </VBox>
+    </children>
+</HBox>

@@ -1,0 +1,74 @@
+/*
+ * Boss screen component styles
+ */
+
+/* ── Info / Stats Cards ─────────────────────────────────────────── */
+#Card {
+    -fx-background-color: #1E293B;
+    -fx-border-color: #4B5563;
+    -fx-border-width: 2;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+#title {
+    -fx-text-fill: #94A3B8;
+    -fx-font-size: 11px;
+    -fx-padding: 10 14 0 14;
+}
+
+#result {
+    -fx-text-fill: WHITE;
+    -fx-padding: 4 14 10 14;
+}
+
+/* ── Navigation buttons ─────────────────────────────────────────── */
+#btn {
+    -fx-background-color: #1E293B;
+    -fx-border-color: #4B5563;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: WHITE;
+    -fx-cursor: hand;
+}
+
+#btn:hover {
+    -fx-background-color: #334155;
+}
+
+.green-button {
+    -fx-background-color: #15803D;
+    -fx-text-fill: WHITE;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.green-button:hover {
+    -fx-background-color: #16A34A;
+}
+
+/* ── AppBar ─────────────────────────────────────────────────────── */
+#appbar-navigation {
+    -fx-background-color: #1E293B;
+    -fx-border-color: #334155;
+    -fx-border-width: 0 0 2 0;
+}
+
+#back-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: WHITE;
+    -fx-cursor: hand;
+    -fx-font-size: 22px;
+}
+
+#back-button:hover {
+    -fx-background-color: #334155;
+    -fx-background-radius: 6;
+}
+
+#title-nav {
+    -fx-text-fill: WHITE;
+    -fx-font-weight: bold;
+}

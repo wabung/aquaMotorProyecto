@@ -6,7 +6,9 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HomeSalesController implements Initializable {
+import utils.InitializableWithUser;
+
+public class HomeSalesController implements Initializable, InitializableWithUser {
 
     // Controlador del título
     @FXML

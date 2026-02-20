@@ -35,6 +35,18 @@ public class AppBarController implements Initializable {
         this.onBackAction = action;
     }
 
+    /** Alias for setOnBackAction, used by mechanic controllers */
+    public void setBackAction(Runnable action) {
+        this.onBackAction = action;
+    }
+
+    public void setBackButtonVisible(boolean visible) {
+        if (backButton != null) {
+            backButton.setVisible(visible);
+            backButton.setManaged(visible);
+        }
+    }
+
     @FXML
     private void handleBack() {
         if (onBackAction != null) {

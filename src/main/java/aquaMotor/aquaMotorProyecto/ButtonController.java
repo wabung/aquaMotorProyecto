@@ -1,5 +1,6 @@
 package aquaMotor.aquaMotorProyecto;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.fxml.Initializable;
@@ -27,6 +28,10 @@ public class ButtonController implements Initializable {
 
     public void setOnClickAction(Runnable action) {
         this.onClickAction = action;
+    }
+
+    public void setOnAction(EventHandler<ActionEvent> handler) {
+        if (btn != null) btn.setOnAction(handler);
     }
 
     @FXML

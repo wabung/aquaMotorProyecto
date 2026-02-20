@@ -1,0 +1,62 @@
+/* Contenedor Principal */
+.root {
+    -fx-background-color: #111827; /* Fondo azul oscuro profundo */
+    -fx-font-family: "Segoe UI", "Helvetica", sans-serif;
+}
+
+/* Paneles con bordes redondeados (Cards) */
+.info-card {
+    -fx-border-color: #374151;      /* Borde sutil para no desentonar */
+    -fx-background-color: #1E293B;  /* Fondo de la tarjeta un poco más claro que el root */
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+}
+
+/* Fondo blanco para el icono del coche (Mantenido para visibilidad del icono) */
+.icon-container {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px;
+}
+
+/* Estilos de Texto con el color solicitado: #e2e8f0 */
+.text-header {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
+
+.label-primary {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.label-secondary {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 14px;
+    -fx-opacity: 0.85;
+}
+
+/* Estilo para la lista de reparaciones */
+.repair-item {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 13px;
+}
+
+/* Botón Start Task */
+.button-start {
+    -fx-background-color: #14532d;
+    -fx-border-color: #22c55e;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-text-fill: #e2e8f0; /* Texto del botón también actualizado */
+    -fx-font-weight: bold;
+    -fx-padding: 10 40;
+    -fx-cursor: hand;
+}
+
+.button-start:hover {
+    -fx-background-color: #166534;
+}
